@@ -8,23 +8,27 @@
 
 import UIKit
 
-class HandicapInstructionView: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+class HandicapInstructionView: UIView {
+    
+    @IBOutlet weak var headerStackView: UIStackView!
+    @IBOutlet weak var bigView: UIView!
+    @IBOutlet weak var pageBtn: UISegmentedControl!
+    @IBOutlet weak var HandicapView: UIView!
+    @IBOutlet weak var HandicapTableView: UITableView!
+    override func awakeFromNib() {
+        HandicapView.layer.cornerRadius = 10
+        HandicapView.layer.borderColor = UIColor.lightGray.cgColor
+        HandicapView.layer.borderWidth = 1
+        bigView.corner(byRoundingCorners: [.topLeft,.topRight], radii: 10)
+        headerStackView.layer.borderWidth = 1
+        headerStackView.layer.addBorder(edge: .bottom, color: .lightGray, thickness: 1)
+        //去除多餘的行數
+        HandicapTableView.tableFooterView = UIView()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    public static func create() -> HandicapInstructionView {
+        let selfView = Bundle.main.loadNibNamed("HandicapInstructionView", owner: self, options: nil)?.first as! HandicapInstructionView
+        return selfView
     }
-    */
-
+    
 }

@@ -9,7 +9,11 @@
 import UIKit
 
 class HandicapInsTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var handicapLabel: UILabel!
+    @IBOutlet weak var conLabel: UILabel!
+    @IBOutlet weak var descritionLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

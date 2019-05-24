@@ -20,15 +20,16 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginBtn.layer.cornerRadius = 10
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
         enableSideMenu(false)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        enableSideMenu(false)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
+        super.viewWillDisappear(animated)
         enableSideMenu(true)
     }
     

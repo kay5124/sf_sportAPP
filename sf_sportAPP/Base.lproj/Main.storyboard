@@ -472,6 +472,35 @@
             </objects>
             <point key="canvasLocation" x="1486.9565217391305" y="18.75"/>
         </scene>
+        <!--Global View Controller-->
+        <scene sceneID="AIU-sZ-wCB">
+            <objects>
+                <viewController storyboardIdentifier="vc_global" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Dbe-IA-aXb" customClass="GlobalViewController" customModule="sf_sportAPP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VXl-bG-9Zu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hqD-Et-2xz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hqD-Et-2xz" firstAttribute="trailing" secondItem="3br-Pj-5bH" secondAttribute="trailing" id="AoI-nr-sxW"/>
+                            <constraint firstItem="hqD-Et-2xz" firstAttribute="leading" secondItem="3br-Pj-5bH" secondAttribute="leading" id="Jrf-kI-ceQ"/>
+                            <constraint firstAttribute="bottom" secondItem="hqD-Et-2xz" secondAttribute="bottom" id="TST-V3-uLu"/>
+                            <constraint firstItem="hqD-Et-2xz" firstAttribute="top" secondItem="VXl-bG-9Zu" secondAttribute="top" id="pEW-Ih-bYc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3br-Pj-5bH"/>
+                    </view>
+                    <connections>
+                        <outlet property="customView" destination="hqD-Et-2xz" id="Bje-mW-KyK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nVL-I6-aJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2328.985507246377" y="18.75"/>
+        </scene>
         <!--Custom Dialog View Controller-->
         <scene sceneID="UJQ-sL-hah">
             <objects>

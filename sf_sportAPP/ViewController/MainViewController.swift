@@ -52,6 +52,9 @@ class MainViewController: UIViewController {
     }
     
     public func SideMenuCloseEvent(){
+        
+        
+        
         switch _GLobalService.menuClickIdx {
         case 0:
             if _GLobalService.nowViewController is HomeViewController {
@@ -66,6 +69,10 @@ class MainViewController: UIViewController {
         case 2:
             break
         case 3:
+            
+            let vc_global = storyboard?.instantiateViewController(withIdentifier: "vc_global") as! GlobalViewController
+            self.navigationController?.pushViewController(vc_global, animated: true)
+            
             break
         case 4:
             break
@@ -78,6 +85,7 @@ class MainViewController: UIViewController {
         case 8:
             break
         case 9:
+            enableSideMenu(false)
             let vc_login = storyboard?.instantiateViewController(withIdentifier: "vc_login") as! LoginViewController
             switchViewController(myView, _GLobalService.nowViewController, vc_login)
             break
@@ -120,10 +128,26 @@ extension UIViewController {
     
     /// Enables or disables the swipe gestures used to show a SideMenu on the given side (default: left).
     public func enableSideMenu(_ enable: Bool) {
-        if enable == false{
+        if enable == false {
             SideMenuManager.default.menuLeftNavigationController = nil
         } else {
             SideMenuManager.default.menuLeftNavigationController = _GLobalService.sideMenuLeftViewController
+        }
+    }
+}
+
+extension NSMutableAttributedString{
+    // If no text is send, then the style will be applied to full text
+    func setColorForText(_ textToFind: String?, with color: UIColor) {
+        
+        let range:NSRange?
+        if let text = textToFind{
+            range = self.mutableString.range(of: text, options: .caseInsensitive)
+        }else{
+            range = NSMakeRange(0, self.length)
+        }
+        if range!.location != NSNotFound {
+            addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range!)
         }
     }
 }

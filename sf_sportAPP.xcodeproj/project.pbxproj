@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		28D61AEC032A7DA5FB75699A /* Pods_sf_sportAPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A45F76169192D2B27D06341 /* Pods_sf_sportAPP.framework */; };
+		7197BA0F22979CDB0012BAE4 /* GlobalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7197BA0E22979CDB0012BAE4 /* GlobalViewController.swift */; };
+		7197BA1222979E840012BAE4 /* HandicapInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7197BA1022979E840012BAE4 /* HandicapInstructionView.swift */; };
+		7197BA1322979E840012BAE4 /* HandicapInstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7197BA1122979E840012BAE4 /* HandicapInstructionView.xib */; };
+		7197BA182297BE2B0012BAE4 /* HandicapInsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7197BA162297BE2B0012BAE4 /* HandicapInsTableViewCell.swift */; };
+		7197BA192297BE2B0012BAE4 /* HandicapInsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7197BA172297BE2B0012BAE4 /* HandicapInsTableViewCell.xib */; };
 		71C503D922924A2800CCB591 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C503D822924A2800CCB591 /* AppDelegate.swift */; };
 		71C503DE22924A2800CCB591 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C503DC22924A2800CCB591 /* Main.storyboard */; };
 		71C503E122924A2800CCB591 /* sf_sportAPP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71C503DF22924A2800CCB591 /* sf_sportAPP.xcdatamodeld */; };
@@ -36,6 +41,11 @@
 
 /* Begin PBXFileReference section */
 		3F34C4778326A4B210F7C970 /* Pods-sf_sportAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sf_sportAPP.debug.xcconfig"; path = "Target Support Files/Pods-sf_sportAPP/Pods-sf_sportAPP.debug.xcconfig"; sourceTree = "<group>"; };
+		7197BA0E22979CDB0012BAE4 /* GlobalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalViewController.swift; sourceTree = "<group>"; };
+		7197BA1022979E840012BAE4 /* HandicapInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandicapInstructionView.swift; sourceTree = "<group>"; };
+		7197BA1122979E840012BAE4 /* HandicapInstructionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HandicapInstructionView.xib; sourceTree = "<group>"; };
+		7197BA162297BE2B0012BAE4 /* HandicapInsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandicapInsTableViewCell.swift; sourceTree = "<group>"; };
+		7197BA172297BE2B0012BAE4 /* HandicapInsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HandicapInsTableViewCell.xib; sourceTree = "<group>"; };
 		71C503D522924A2800CCB591 /* sf_sportAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sf_sportAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C503D822924A2800CCB591 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71C503DD22924A2800CCB591 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,6 +140,7 @@
 				71C504042292AAF500CCB591 /* LoginViewController.swift */,
 				71C504062292BD7D00CCB591 /* SideMenuViewController.swift */,
 				71DD4DF12293EF9C00B9029C /* CustomDialogViewController.swift */,
+				7197BA0E22979CDB0012BAE4 /* GlobalViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -152,6 +163,8 @@
 				71DD4DF7229526CF00B9029C /* LeagueTableViewCell.swift */,
 				71DD4DFB2295474F00B9029C /* sportView.swift */,
 				71DD4DFF22954A5500B9029C /* sportTableViewCell.swift */,
+				7197BA1022979E840012BAE4 /* HandicapInstructionView.swift */,
+				7197BA162297BE2B0012BAE4 /* HandicapInsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,6 +177,8 @@
 				71DD4DF8229526CF00B9029C /* LeagueTableViewCell.xib */,
 				71DD4DFC2295474F00B9029C /* sportView.xib */,
 				71DD4E0022954A5500B9029C /* sportTableViewCell.xib */,
+				7197BA1122979E840012BAE4 /* HandicapInstructionView.xib */,
+				7197BA172297BE2B0012BAE4 /* HandicapInsTableViewCell.xib */,
 			);
 			path = Views_xib;
 			sourceTree = "<group>";
@@ -247,6 +262,8 @@
 			files = (
 				71DD4DF62293F10B00B9029C /* LeagueView.xib in Resources */,
 				71C503E622924A2A00CCB591 /* LaunchScreen.storyboard in Resources */,
+				7197BA192297BE2B0012BAE4 /* HandicapInsTableViewCell.xib in Resources */,
+				7197BA1322979E840012BAE4 /* HandicapInstructionView.xib in Resources */,
 				71DD4E0222954A5500B9029C /* sportTableViewCell.xib in Resources */,
 				71DD4DFA229526CF00B9029C /* LeagueTableViewCell.xib in Resources */,
 				71C503E322924A2A00CCB591 /* Assets.xcassets in Resources */,
@@ -308,6 +325,7 @@
 				71C503E122924A2800CCB591 /* sf_sportAPP.xcdatamodeld in Sources */,
 				71C503D922924A2800CCB591 /* AppDelegate.swift in Sources */,
 				71DD4E0122954A5500B9029C /* sportTableViewCell.swift in Sources */,
+				7197BA1222979E840012BAE4 /* HandicapInstructionView.swift in Sources */,
 				71C503F322924BC700CCB591 /* cornerModle.swift in Sources */,
 				71DD4DFD2295474F00B9029C /* sportView.swift in Sources */,
 				71C503FF22927A6900CCB591 /* _Global.swift in Sources */,
@@ -317,10 +335,12 @@
 				71C504052292AAF500CCB591 /* LoginViewController.swift in Sources */,
 				71C504072292BD7D00CCB591 /* SideMenuViewController.swift in Sources */,
 				71C503F122924AA400CCB591 /* MainViewController.swift in Sources */,
+				7197BA182297BE2B0012BAE4 /* HandicapInsTableViewCell.swift in Sources */,
 				71DD4DF52293F10B00B9029C /* LeagueView.swift in Sources */,
 				71DD4DF22293EF9C00B9029C /* CustomDialogViewController.swift in Sources */,
 				71DD4DF9229526CF00B9029C /* LeagueTableViewCell.swift in Sources */,
 				71C5040A2292BFE800CCB591 /* MenuTableViewCell.swift in Sources */,
+				7197BA0F22979CDB0012BAE4 /* GlobalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

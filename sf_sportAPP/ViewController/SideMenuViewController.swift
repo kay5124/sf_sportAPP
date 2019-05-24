@@ -15,6 +15,7 @@ class SideMenuViewController: UIViewController {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userMoney: UILabel!
     @IBOutlet weak var MenuItems: UITableView!
+    public static var clickItem: String = ""
     
     override func viewDidLoad() {
         

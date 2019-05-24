@@ -37,12 +37,31 @@ class _GLobalService {
     public static var userMoney = "100000"
 }
 
-class _menuItems {
-    let itemName: String
-    let Image: String
+class HandicapInstructionService {
     
-    init(itemName: String,Image: String){
-        self.itemName = itemName
-        self.Image = Image
+    public static let handicapData = [
+        "PK_0_表示互不相讓，贏1分全贏。",
+        "0-50_0/0.5_表示互不相讓，贏1分全贏。",
+        "0輸_0.5_表示讓分隊伍跟受讓隊伍平手時，\n押讓分隊伍輸50%。",
+        "1+50_0.5/1_表示讓分隊伍贏受讓隊伍1分時，\n押讓分隊伍全輸。",
+        "1平_1_表示讓分隊伍贏受讓隊伍1分時，\n兩隊平手，2分全贏。",
+        "1-50_1/1.5_表示讓分隊伍贏受讓隊伍1分時，\n押讓分隊伍輸50%，2分全贏。",
+        "1輸_1.5_表示讓分隊伍贏受讓隊伍1分時，\n押讓分隊伍全輸，2分全贏。",
+        "2+50_1.5/2_表示讓分隊伍贏受讓隊伍2分時，\n押讓分隊伍贏50%，3分全贏",
+        "2平_2_表示讓分隊伍贏受讓隊伍2分時，\n兩隊平手，3分全贏。",
+        "2-50_2/2.5_表示讓分隊伍贏受讓隊伍2分時，\n押讓分隊伍輸50%，3分全贏。",
+        "2輸_2.5_表示讓分隊伍贏受讓隊伍2分時，\n押讓分隊伍全輸，3分全贏。",
+        "3+50_2.5/3_表示讓分隊伍贏受讓隊伍3分時，\n押讓分隊伍贏50%，4分全贏",
+        "3平_3_表示讓分隊伍贏受讓隊伍3分時，\n兩隊平手，4分全贏。",
+    ]
+    
+}
+
+extension NSMutableAttributedString {
+    
+    func setColor(color: UIColor, forText stringValue: String) {
+        let range: NSRange = self.mutableString.range(of: stringValue, options: .caseInsensitive)
+        self.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range)
     }
+    
 }
