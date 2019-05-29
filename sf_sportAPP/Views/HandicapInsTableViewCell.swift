@@ -16,6 +16,7 @@ class HandicapInsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+//        setSeparator()
         // Initialization code
     }
 
@@ -23,6 +24,12 @@ class HandicapInsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setSeparator() {
+        let separator = UIView(frame: CGRect(x: self.bounds.origin.x, y: self.bounds.origin.y, width: bounds.width + 100, height: 1.5))
+        separator.backgroundColor = UIColor(white: 216/255, alpha: 100)
+        addSubview(separator)
     }
     
 }

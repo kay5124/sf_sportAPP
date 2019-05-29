@@ -81,11 +81,12 @@ class MainViewController: UIViewController {
         case 6:
             break
         case 7:
+            let vc_global = storyboard?.instantiateViewController(withIdentifier: "vc_global") as! GlobalViewController
+            self.navigationController?.pushViewController(vc_global, animated: true)
             break
         case 8:
             break
         case 9:
-            enableSideMenu(false)
             let vc_login = storyboard?.instantiateViewController(withIdentifier: "vc_login") as! LoginViewController
             switchViewController(myView, _GLobalService.nowViewController, vc_login)
             break
@@ -129,9 +130,9 @@ extension UIViewController {
     /// Enables or disables the swipe gestures used to show a SideMenu on the given side (default: left).
     public func enableSideMenu(_ enable: Bool) {
         if enable == false {
-            SideMenuManager.default.menuLeftNavigationController = nil
+            SideMenuManager.default.menuWidth = 0
         } else {
-            SideMenuManager.default.menuLeftNavigationController = _GLobalService.sideMenuLeftViewController
+            SideMenuManager.default.menuWidth = view.frame.width / 2 + 50
         }
     }
 }

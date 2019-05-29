@@ -73,6 +73,10 @@ class HomeViewController: UIViewController {
         gameLiveBtn.addTarget(self, action: #selector(gameType_onClick(_:)), for: .touchUpInside)
         gameCrossBtn.addTarget(self, action: #selector(gameType_onClick(_:)), for: .touchUpInside)
         
+        _GLobalService.LeagueSelectList.removeAll()
+        _GLobalService.tempLeagueSelectList.removeAll()
+        _GLobalService.nowSport = ""
+        
         //league data
         for i in 1 ... 10 {
             _GLobalService.LeagueList.append("聯盟測試\(i)號")
@@ -135,8 +139,6 @@ class HomeViewController: UIViewController {
     @objc func leagueCancel_onClick(){
         customView.isHidden = true
         maskView.isHidden = true
-        
-//        _GLobalService.LeagueSelectList.removeAll()
     }
     
     @objc func leagueConfirm_onClick(){
@@ -174,8 +176,8 @@ class customViewService {
         if vc_home.nowCusView == "sport" {
             let Item = _GLobalService.sportItems.filter{$0.key.contains(_GLobalService.nowSport)}
             
-            vc_home.sportImgView.image = UIImage(named: Item.first?.value ?? "")
-            vc_home.sportNameLabel.text = Item.first?.key.components(separatedBy: "_")[1]
+            vc_home.sportImgView.image = UIImage(named: Item.first?.value ?? "ic_sc")
+            vc_home.sportNameLabel.text = Item.first?.key.components(separatedBy: "_")[1] ?? "足球"
         }
     
         vc_home.customView.isHidden = true

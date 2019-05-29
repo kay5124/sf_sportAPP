@@ -15,12 +15,10 @@ class CustomDialogViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let page = UIView(frame: self.view.bounds.offsetBy(dx: 2, dy: 2))
-        page.backgroundColor = .blue
+//        let page = UIView(frame: self.view.bounds.offsetBy(dx: 2, dy: 2))
+//        page.backgroundColor = .blue
         
-        let changeView = LeagueView.create()
-        changeView.frame = CGRect(x: 0, y: 0, width: CusView.frame.width, height: CusView.frame.height)
-        CusView.addSubview(changeView)
+        CusView.corner(byRoundingCorners: [.topLeft,.topRight,.bottomLeft,.bottomRight], radii: 10)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

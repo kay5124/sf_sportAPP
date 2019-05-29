@@ -23,9 +23,9 @@ class LoginViewController: UIViewController {
         enableSideMenu(false)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-//        enableSideMenu(false)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        enableSideMenu(false)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -18,7 +18,7 @@ class SideMenuViewController: UIViewController {
     public static var clickItem: String = ""
     
     override func viewDidLoad() {
-        
+        _GLobalService.sideMenuVC = self
         MenuItems.dataSource = self
         MenuItems.rowHeight = 60
         let nib = UINib(nibName: "MenuTableViewCell", bundle: nil)
@@ -40,6 +40,10 @@ class SideMenuViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         (_GLobalService.myMainVC as! MainViewController).SideMenuCloseEvent()
+    }
+    
+    public func CloseSideMenu(){
+        dismiss(animated: true, completion: nil)
     }
     
 }
@@ -69,7 +73,7 @@ extension SideMenuViewController: UITableViewDataSource{
     @objc func MenuItem_onClick(sender: MyTapGesture){
         let idx = sender.clickIndex
         _GLobalService.menuClickIdx = idx
-        dismiss(animated: true, completion: nil)
+        CloseSideMenu()
     }
     
     class MyTapGesture: UITapGestureRecognizer{

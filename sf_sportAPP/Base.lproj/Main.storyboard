@@ -67,7 +67,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gPX-GL-8lg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gPX-GL-8lg">
                                 <rect key="frame" x="0.0" y="209" width="414" height="653"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -219,7 +219,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <items>
                                             <navigationItem title="遊戲主頁" id="75n-M0-x0E">
-                                                <barButtonItem key="leftBarButtonItem" style="plain" id="N9x-RV-OD7">
+                                                <barButtonItem key="leftBarButtonItem" id="N9x-RV-OD7">
                                                     <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lrN-kp-K76">
                                                         <rect key="frame" x="20" y="6" width="32" height="32"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -292,7 +292,7 @@
                             <view hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7xh-aa-dri">
                                 <rect key="frame" x="20" y="152" width="64" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.38128745719178081" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.38" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fy7-us-A9Z">
                                 <rect key="frame" x="0.0" y="791" width="414" height="1"/>
@@ -510,17 +510,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PY9-tk-T82">
-                                <rect key="frame" x="57" y="248" width="300" height="400"/>
+                                <rect key="frame" x="57" y="323" width="300" height="250"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="1Ap-qI-cAS"/>
+                                    <constraint firstAttribute="height" constant="250" id="1Ap-qI-cAS"/>
                                     <constraint firstAttribute="width" constant="300" id="BmK-eb-MKL"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="hvR-hC-Wlv"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="sFN-AQ-096"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.75" alpha="0.89907962328767121" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.79205030202865601" green="0.79265695810317993" blue="0.79214423894882202" alpha="0.38" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PY9-tk-T82" firstAttribute="centerY" secondItem="k9c-bm-nRY" secondAttribute="centerY" id="IC8-Pd-sVe"/>
                             <constraint firstItem="PY9-tk-T82" firstAttribute="centerX" secondItem="k9c-bm-nRY" secondAttribute="centerX" id="Ybb-p2-94Y"/>
