@@ -19,6 +19,10 @@
 		719D8D71229E4D8D00AEDE4F /* NoticeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719D8D6F229E4D8D00AEDE4F /* NoticeView.xib */; };
 		719D8D74229E50DC00AEDE4F /* CusDataPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D8D72229E50DC00AEDE4F /* CusDataPickerView.swift */; };
 		719D8D75229E50DC00AEDE4F /* CusDataPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719D8D73229E50DC00AEDE4F /* CusDataPickerView.xib */; };
+		719D8D78229E76FD00AEDE4F /* CrossCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D8D76229E76FD00AEDE4F /* CrossCalculatorView.swift */; };
+		719D8D79229E76FD00AEDE4F /* CrossCalculatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719D8D77229E76FD00AEDE4F /* CrossCalculatorView.xib */; };
+		719D8D7C229E7D4900AEDE4F /* CrossCalculatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D8D7A229E7D4900AEDE4F /* CrossCalculatorTableViewCell.swift */; };
+		719D8D7D229E7D4900AEDE4F /* CrossCalculatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719D8D7B229E7D4900AEDE4F /* CrossCalculatorTableViewCell.xib */; };
 		71C503D922924A2800CCB591 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C503D822924A2800CCB591 /* AppDelegate.swift */; };
 		71C503DE22924A2800CCB591 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C503DC22924A2800CCB591 /* Main.storyboard */; };
 		71C503E122924A2800CCB591 /* sf_sportAPP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71C503DF22924A2800CCB591 /* sf_sportAPP.xcdatamodeld */; };
@@ -58,6 +62,10 @@
 		719D8D6F229E4D8D00AEDE4F /* NoticeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NoticeView.xib; path = ../Views/NoticeView.xib; sourceTree = "<group>"; };
 		719D8D72229E50DC00AEDE4F /* CusDataPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CusDataPickerView.swift; sourceTree = "<group>"; };
 		719D8D73229E50DC00AEDE4F /* CusDataPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CusDataPickerView.xib; path = ../Views/CusDataPickerView.xib; sourceTree = "<group>"; };
+		719D8D76229E76FD00AEDE4F /* CrossCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossCalculatorView.swift; sourceTree = "<group>"; };
+		719D8D77229E76FD00AEDE4F /* CrossCalculatorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CrossCalculatorView.xib; path = ../Views/CrossCalculatorView.xib; sourceTree = "<group>"; };
+		719D8D7A229E7D4900AEDE4F /* CrossCalculatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossCalculatorTableViewCell.swift; sourceTree = "<group>"; };
+		719D8D7B229E7D4900AEDE4F /* CrossCalculatorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CrossCalculatorTableViewCell.xib; path = ../Views/CrossCalculatorTableViewCell.xib; sourceTree = "<group>"; };
 		71C503D522924A2800CCB591 /* sf_sportAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sf_sportAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C503D822924A2800CCB591 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71C503DD22924A2800CCB591 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -180,6 +188,8 @@
 				719D8D66229D105300AEDE4F /* HandicapSampleTableViewCell.swift */,
 				719D8D6E229E4D8D00AEDE4F /* NoticeView.swift */,
 				719D8D72229E50DC00AEDE4F /* CusDataPickerView.swift */,
+				719D8D76229E76FD00AEDE4F /* CrossCalculatorView.swift */,
+				719D8D7A229E7D4900AEDE4F /* CrossCalculatorTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,6 +207,8 @@
 				719D8D67229D105300AEDE4F /* HandicapSampleTableViewCell.xib */,
 				719D8D6F229E4D8D00AEDE4F /* NoticeView.xib */,
 				719D8D73229E50DC00AEDE4F /* CusDataPickerView.xib */,
+				719D8D77229E76FD00AEDE4F /* CrossCalculatorView.xib */,
+				719D8D7B229E7D4900AEDE4F /* CrossCalculatorTableViewCell.xib */,
 			);
 			path = Views_xib;
 			sourceTree = "<group>";
@@ -285,8 +297,10 @@
 				7197BA1322979E840012BAE4 /* HandicapInstructionView.xib in Resources */,
 				71DD4E0222954A5500B9029C /* sportTableViewCell.xib in Resources */,
 				71DD4DFA229526CF00B9029C /* LeagueTableViewCell.xib in Resources */,
+				719D8D79229E76FD00AEDE4F /* CrossCalculatorView.xib in Resources */,
 				71C503E322924A2A00CCB591 /* Assets.xcassets in Resources */,
 				719D8D71229E4D8D00AEDE4F /* NoticeView.xib in Resources */,
+				719D8D7D229E7D4900AEDE4F /* CrossCalculatorTableViewCell.xib in Resources */,
 				719D8D75229E50DC00AEDE4F /* CusDataPickerView.xib in Resources */,
 				71DD4DFE2295474F00B9029C /* sportView.xib in Resources */,
 				71C5040B2292BFE800CCB591 /* MenuTableViewCell.xib in Resources */,
@@ -360,8 +374,10 @@
 				71C503F122924AA400CCB591 /* MainViewController.swift in Sources */,
 				7197BA182297BE2B0012BAE4 /* HandicapInsTableViewCell.swift in Sources */,
 				71DD4DF52293F10B00B9029C /* LeagueView.swift in Sources */,
+				719D8D78229E76FD00AEDE4F /* CrossCalculatorView.swift in Sources */,
 				719D8D68229D105300AEDE4F /* HandicapSampleTableViewCell.swift in Sources */,
 				71DD4DF22293EF9C00B9029C /* CustomDialogViewController.swift in Sources */,
+				719D8D7C229E7D4900AEDE4F /* CrossCalculatorTableViewCell.swift in Sources */,
 				71DD4DF9229526CF00B9029C /* LeagueTableViewCell.swift in Sources */,
 				71C5040A2292BFE800CCB591 /* MenuTableViewCell.swift in Sources */,
 				7197BA0F22979CDB0012BAE4 /* GlobalViewController.swift in Sources */,

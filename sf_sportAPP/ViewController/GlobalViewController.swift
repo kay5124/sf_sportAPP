@@ -33,9 +33,12 @@ class GlobalViewController: UIViewController {
         self.title = item?.key.components(separatedBy: "_")[1] ?? ""
         
         var changeView: UIView?
-        
+        //過關計算器
+        if _GLobalService.menuClickIdx == 2 {
+            changeView = CrossCalculatorView.create()
+        }
         //盤口說明
-        if _GLobalService.menuClickIdx == 3 {
+        else if _GLobalService.menuClickIdx == 3 {
             changeView = HandicapInstructionView.create()
             (changeView as! HandicapInstructionView).pageBtn.addTarget(self, action: #selector(handicapPage_onChange(_:)), for: .valueChanged)
             (changeView as! HandicapInstructionView).sampleDesView.layer.borderColor = UIColor.lightGray.cgColor

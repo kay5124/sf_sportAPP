@@ -67,6 +67,8 @@ class MainViewController: UIViewController {
         case 1:
             break
         case 2:
+            let vc_global = storyboard?.instantiateViewController(withIdentifier: "vc_global") as! GlobalViewController
+            self.navigationController?.pushViewController(vc_global, animated: true)
             break
         case 3:
             
