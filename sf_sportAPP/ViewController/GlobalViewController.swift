@@ -12,11 +12,17 @@ import SideMenu
 
 class GlobalViewController: UIViewController {
     @IBOutlet weak var customView: UIView!
+    public var tempViewController: UIViewController?
     public var nowView: UIView?
     public var dialogViewController: UIViewController?
     public var noticeType = "所有"
     public var tempNoticeType = "所有"
     public var handicapType: Int = 0
+    public static var dialogType = -1
+    public static var crossTypeCell: UITableViewCell?
+    public var crossType = "全贏"
+    public var tempCrossType = "全贏"
+    public static var nowCellCrossType = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +33,8 @@ class GlobalViewController: UIViewController {
     }
     
     public func InitView(){
+        tempViewController = _GLobalService.nowViewController
+        _GLobalService.nowViewController = self
         dialogViewController = storyboard?.instantiateViewController(withIdentifier: "vc_Dialog") as! CustomDialogViewController
         
         let item = _GLobalService.sideMenuItems.filter({$0.key.contains(String(_GLobalService.menuClickIdx))}).first
@@ -35,7 +43,10 @@ class GlobalViewController: UIViewController {
         var changeView: UIView?
         //過關計算器
         if _GLobalService.menuClickIdx == 2 {
+            
             changeView = CrossCalculatorView.create()
+            // MARK: - 键盘即将弹出
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         }
         //盤口說明
         else if _GLobalService.menuClickIdx == 3 {
@@ -54,7 +65,7 @@ class GlobalViewController: UIViewController {
             (changeView as! HandicapInstructionView).HandicapTableView.addGestureRecognizer(swipeLeft)
             (changeView as! HandicapInstructionView).HandicapTableView.addGestureRecognizer(swipeRight)
         }
-            //公告
+        //公告
         else if _GLobalService.menuClickIdx == 7 {
             changeView = NoticeView.create()
             let dialogView = changeView as! NoticeView
@@ -67,6 +78,10 @@ class GlobalViewController: UIViewController {
         
         if _GLobalService.menuClickIdx == 3 { reloadTableData() }
         
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        view.endEditing(true)
     }
     
     @objc func swipe(_ recognizer:UISwipeGestureRecognizer){
@@ -101,10 +116,10 @@ class GlobalViewController: UIViewController {
             }
             reloadTableData()
         }
-        let point=recognizer.location(in: self.view)
-        //这个点是滑动的起点
-        print(point.x)
-        print(point.y)
+//        let point=recognizer.location(in: self.view)
+//        //这个点是滑动的起点
+//        print(point.x)
+//        print(point.y)
     }
     
     @objc func handicapPage_onChange(_ sender: UISegmentedControl){
@@ -136,12 +151,13 @@ class GlobalViewController: UIViewController {
         
         //設定每列row的高度
         let height = handicapView.HandicapTableView.frame.height
-        if handicapView.pageBtn.selectedSegmentIndex == 0 {
+        if handicapView.pageBtn.selectedSegmentIndex == 0
+        {
             handicapView.HandicapTableView.rowHeight = 40
-            //height / CGFloat(HandicapInstructionService.handicapData.count) - 5
-        }else {
+        }
+        else
+        {
             handicapView.HandicapTableView.rowHeight = height / CGFloat(HandicapInstructionService.handicapSampleData.count) - 5
-            //height / CGFloat(HandicapInstructionService.handicapSampleData.count) - 5
         }
         
         //重新讀取資料
@@ -149,29 +165,71 @@ class GlobalViewController: UIViewController {
     }
     
     @objc func noticeTypeBtn_onClick(){
-        let dialog = dialogViewController as! CustomDialogViewController
-        let dialogView = CusDataPickerView.create()
+        GlobalViewController.dialogType = 0
+        dialogShow()
         
-        present(dialog, animated: true, completion: nil)
-        
-        dialogView.frame = CGRect(x: 0, y: 0, width: dialog.CusView.frame.width, height: dialog.CusView.frame.height)
-        dialogView.dataPicker.dataSource = self
-        dialogView.dataPicker.delegate = self
-        dialogView.confirmBtn.addTarget(self, action: #selector(dialogConfirmBtn_onClick), for: .touchUpInside)
-        dialogView.cancelBtn.addTarget(self, action: #selector(dialogCancelBtn_onClick), for: .touchUpInside)
-        
-        let noticeTypeIdx = _GLobalService.noticeTypeItems.firstIndex(where: { (item) -> Bool in item == noticeType })
-        
-        dialogView.dataPicker.selectRow(noticeTypeIdx!, inComponent: 0, animated: true)
-        
-        dialog.CusView.addSubview(dialogView)
+        //        let dialog = dialogViewController as! CustomDialogViewController
+        //        let dialogView = CusDataPickerView.create()
+        //
+        //        present(dialog, animated: true, completion: nil)
+        //
+        //        dialogView.frame = CGRect(x: 0, y: 0, width: dialog.CusView.frame.width, height: dialog.CusView.frame.height)
+        //        dialogView.dataPicker.dataSource = self
+        //        dialogView.dataPicker.delegate = self
+        //        dialogView.confirmBtn.addTarget(self, action: #selector(dialogConfirmBtn_onClick), for: .touchUpInside)
+        //        dialogView.cancelBtn.addTarget(self, action: #selector(dialogCancelBtn_onClick), for: .touchUpInside)
+        //
+        //        let noticeTypeIdx = _GLobalService.noticeTypeItems.firstIndex(where: { (item) -> Bool in item == noticeType })
+        //
+        //        dialogView.dataPicker.selectRow(noticeTypeIdx!, inComponent: 0, animated: true)
+        //
+        //        dialog.CusView.addSubview(dialogView)
     }
     
     @objc func dialogConfirmBtn_onClick(){
         let dialog = dialogViewController as! CustomDialogViewController
         
-        noticeType = tempNoticeType
-        (nowView as! NoticeView).noticeTypeBtn.setTitle(noticeType, for: .normal)
+        if GlobalViewController.dialogType == 0
+        {
+            noticeType = tempNoticeType
+            (nowView as! NoticeView).noticeTypeBtn.setTitle(noticeType, for: .normal)
+        }
+        else if GlobalViewController.dialogType == 1
+        {
+            crossType = tempCrossType
+            let cell = GlobalViewController.crossTypeCell as! CrossCalculatorTableViewCell
+            let idx = (nowView as! CrossCalculatorView).crossTableView.indexPath(for: cell)
+            
+            cell.crossTypeLabel.text = crossType
+            _GLobalService.oddsCrossType[idx!.row] = crossType
+            
+            if crossType == "+" || crossType == "-" {
+                cell.crossPersentText.text = ""
+                cell.crossPersentText.isEnabled = true
+               
+                if crossType == "+" {
+                    cell.crossTypeLabel.textColor = UIColor.blue
+                }else{
+                    cell.crossTypeLabel.textColor = UIColor.red
+                }
+            }
+            else {
+                cell.crossPersentText.text = "100"
+                cell.crossPersentText.isEnabled = false
+                
+                if crossType == "全輸" {
+                    cell.crossTypeLabel.textColor = UIColor.red
+                }
+                else if crossType == "平" {
+                    cell.crossTypeLabel.textColor = UIColor.black
+                }
+                else {
+                    cell.crossTypeLabel.textColor = UIColor.blue
+                }
+                
+            }
+            
+        }
         
         dialog.dismiss(animated: true, completion: nil)
     }
@@ -181,10 +239,38 @@ class GlobalViewController: UIViewController {
         dialog.dismiss(animated: true, completion: nil)
     }
     
+    public static func ShowDialog(){
+        let nowVC = _GLobalService.nowViewController as! GlobalViewController
+        nowVC.dialogShow()
+    }
+    
+    public func dialogShow(){
+        let dialog = dialogViewController as! CustomDialogViewController
+        present(dialog, animated: true, completion: nil)
+        
+        let dialogView = CusDataPickerView.create()
+        dialogView.frame = CGRect(x: 0, y: 0, width: dialog.CusView.frame.width, height: dialog.CusView.frame.height)
+        dialogView.dataPicker.dataSource = self
+        dialogView.dataPicker.delegate = self
+        dialogView.confirmBtn.addTarget(self, action: #selector(dialogConfirmBtn_onClick), for: .touchUpInside)
+        dialogView.cancelBtn.addTarget(self, action: #selector(dialogCancelBtn_onClick), for: .touchUpInside)
+        dialog.CusView.addSubview(dialogView)
+        
+        if GlobalViewController.dialogType == 0 {
+            let noticeTypeIdx = _GLobalService.noticeTypeItems.firstIndex(where: { (item) -> Bool in item == noticeType })
+            dialogView.dataPicker.selectRow(noticeTypeIdx!, inComponent: 0, animated: true)
+        }else if GlobalViewController.dialogType == 1 {
+            let crossTypeIdx = _GLobalService.crossTypeItems.firstIndex(where: { (item) -> Bool in item == GlobalViewController.nowCellCrossType })
+            dialogView.dataPicker.selectRow(crossTypeIdx!, inComponent: 0, animated: true)
+        }
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
         enableSideMenu(true)
+        
+        _GLobalService.nowViewController = tempViewController
     }
     
 }
@@ -262,7 +348,15 @@ extension GlobalViewController: UIPickerViewDataSource{
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return _GLobalService.noticeTypeItems.count
+        let type = GlobalViewController.dialogType
+        if type == 0 {
+            return _GLobalService.noticeTypeItems.count
+        }
+        else if type == 1 {
+            return _GLobalService.crossTypeItems.count
+        }
+        
+        return 0
     }
     
 }
@@ -270,15 +364,44 @@ extension GlobalViewController: UIPickerViewDataSource{
 extension GlobalViewController: UIPickerViewDelegate{
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return _GLobalService.noticeTypeItems[row]
+        let type = GlobalViewController.dialogType
+        if type == 0
+        {
+            return _GLobalService.noticeTypeItems[row]
+        }
+        else if type == 1
+        {
+            return _GLobalService.crossTypeItems[row]
+        }
+        
+        return ""
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 60
+        let type = GlobalViewController.dialogType
+        if type == 0
+        {
+            return 60
+        }
+        else if type == 1
+        {
+            return 30
+        }
+        
+        return 0
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        tempNoticeType = _GLobalService.noticeTypeItems[row]
+        let type = GlobalViewController.dialogType
+        
+        if type == 0
+        {
+            tempNoticeType = _GLobalService.noticeTypeItems[row]
+        }
+        else if type == 1
+        {
+            tempCrossType = _GLobalService.crossTypeItems[row]
+        }
     }
     
 }

@@ -35,6 +35,7 @@ class SideMenuViewController: UIViewController {
         _GLobalService.menuClickIdx = -1
         userName.text = _GLobalService.userName
         userMoney.text = _GLobalService.userMoney
+        self.MenuItems.setContentOffset(.zero, animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

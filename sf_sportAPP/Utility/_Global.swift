@@ -33,6 +33,17 @@ class _GLobalService {
         "美足"
     ]
     
+    public static let crossTypeItems = [ "全贏", "全輸", "平", "+", "-" ]
+    
+    
+    //用於過關計算 拿來判斷要填入哪個輸入匡
+    public static var calcTextType: Int = -1
+    //過關賠率資料
+    public static var oddsList = [ 0 : ""]
+    public static var oddsPersent = [ 0 : ""]
+    public static var oddsCrossType = [ 0 : ""]
+    
+    
     public static var LeagueList: Array<String> = []
     public static var tempLeagueSelectList: Array<String> = []
     public static var LeagueSelectList: Array<String> = []
@@ -47,6 +58,9 @@ class _GLobalService {
     
     public static var userName = ""
     public static var userMoney = "100000"
+    
+    public static var timer_RemoveLastChar: Timer?
+    public static var isBackStillTOuch = false
 }
 
 class HandicapInstructionService {
