@@ -10,6 +10,9 @@ extension UIView {
     ///   - transitionMode: 跳轉的動畫
     func DirectView(selfView: UIView, directView: UIView, time: Double , transitionMode: UIView.AnimationOptions){
         UIView.transition(with: selfView, duration: time, options: transitionMode,
-                          animations: {selfView.addSubview(directView)}, completion: nil)
+                          animations: {
+                            selfView.subviews.first?.removeFromSuperview()
+                            selfView.addSubview(directView)
+        }, completion: nil)
     }
 }

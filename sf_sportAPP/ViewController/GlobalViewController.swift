@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SideMenu
+import SwiftyJSON
 
 class GlobalViewController: UIViewController {
     @IBOutlet weak var customView: UIView!
@@ -167,23 +168,6 @@ class GlobalViewController: UIViewController {
     @objc func noticeTypeBtn_onClick(){
         GlobalViewController.dialogType = 0
         dialogShow()
-        
-        //        let dialog = dialogViewController as! CustomDialogViewController
-        //        let dialogView = CusDataPickerView.create()
-        //
-        //        present(dialog, animated: true, completion: nil)
-        //
-        //        dialogView.frame = CGRect(x: 0, y: 0, width: dialog.CusView.frame.width, height: dialog.CusView.frame.height)
-        //        dialogView.dataPicker.dataSource = self
-        //        dialogView.dataPicker.delegate = self
-        //        dialogView.confirmBtn.addTarget(self, action: #selector(dialogConfirmBtn_onClick), for: .touchUpInside)
-        //        dialogView.cancelBtn.addTarget(self, action: #selector(dialogCancelBtn_onClick), for: .touchUpInside)
-        //
-        //        let noticeTypeIdx = _GLobalService.noticeTypeItems.firstIndex(where: { (item) -> Bool in item == noticeType })
-        //
-        //        dialogView.dataPicker.selectRow(noticeTypeIdx!, inComponent: 0, animated: true)
-        //
-        //        dialog.CusView.addSubview(dialogView)
     }
     
     @objc func dialogConfirmBtn_onClick(){
@@ -193,6 +177,19 @@ class GlobalViewController: UIViewController {
         {
             noticeType = tempNoticeType
             (nowView as! NoticeView).noticeTypeBtn.setTitle(noticeType, for: .normal)
+            
+            if noticeType == "所有" {
+                (nowView as! NoticeView).noticeData = _GLobalService.noticeData
+            }else {
+                var newArrayData: Array<noticeModel> = Array()
+                let newData = _GLobalService.noticeData.filter({$0.noticeType == noticeType})
+                for item in newData{
+                    newArrayData.append(item.self)
+                }
+                (nowView as! NoticeView).noticeData = newArrayData
+            }
+            
+            (nowView as! NoticeView).noticeTableView.reloadData()
         }
         else if GlobalViewController.dialogType == 1
         {
@@ -204,6 +201,7 @@ class GlobalViewController: UIViewController {
             _GLobalService.oddsCrossType[idx!.row] = crossType
             
             if crossType == "+" || crossType == "-" {
+                _GLobalService.oddsPersent[idx!.row] = ""
                 cell.crossPersentText.text = ""
                 cell.crossPersentText.isEnabled = true
                
@@ -214,6 +212,7 @@ class GlobalViewController: UIViewController {
                 }
             }
             else {
+                _GLobalService.oddsPersent[idx!.row] = "100"
                 cell.crossPersentText.text = "100"
                 cell.crossPersentText.isEnabled = false
                 
@@ -221,6 +220,8 @@ class GlobalViewController: UIViewController {
                     cell.crossTypeLabel.textColor = UIColor.red
                 }
                 else if crossType == "平" {
+                    _GLobalService.oddsPersent[idx!.row] = "0"
+                    cell.crossPersentText.text = "0"
                     cell.crossTypeLabel.textColor = UIColor.black
                 }
                 else {

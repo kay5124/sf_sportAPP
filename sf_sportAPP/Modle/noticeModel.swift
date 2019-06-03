@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+struct noticeModel: Codable {
+    let noticeType: String
+    let noticeDate: String
+    let noticeContent: String
+    var isExpan: Bool
+}

@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var footerStackView: UIStackView!
     @IBOutlet weak var maskView: UIView!
     @IBOutlet weak var menuBtn: UIBarButtonItem!
-//    let leagueView = LeagueView.create()
+
     @IBOutlet weak var refreshStackView: UIStackView!
     @IBOutlet weak var sportStackView: UIStackView!
     @IBOutlet weak var leagueStackView: UIStackView!
@@ -104,12 +104,7 @@ class HomeViewController: UIViewController {
         let SportView = sportView.create()
         SportView.frame = CGRect(x: 0, y: 0, width: customView.frame.width, height: customView.frame.height)
         
-        if customView.subviews.count == 0 {
-            customView.addSubview(SportView)
-        }
-        else {
-            customView.DirectView(selfView: customView.subviews[0], directView: SportView, time: 0, transitionMode: .init())
-        }
+        customView.DirectView(selfView: customView, directView: SportView, time: 0, transitionMode: .init())
         
         nowCusView = "sport"
         customView.isHidden = false
@@ -120,13 +115,8 @@ class HomeViewController: UIViewController {
         
         let leagueView = LeagueView.create()
         leagueView.frame = CGRect(x: 0, y: 0, width: customView.frame.width, height: customView.frame.height)
-
-        if customView.subviews.count == 0 {
-            customView.addSubview(leagueView)
-        }
-        else {
-            customView.DirectView(selfView: customView.subviews[0], directView: leagueView, time: 0, transitionMode: .init())
-        }
+        
+        customView.DirectView(selfView: customView, directView: leagueView, time: 0, transitionMode: .init())
         
         leagueView.cancelBtn.addTarget(self, action: #selector(leagueCancel_onClick), for: .touchUpInside)
         leagueView.confirmBtn.addTarget(self, action: #selector(leagueConfirm_onClick), for: .touchUpInside)

@@ -24,6 +24,7 @@ class MainViewController: UIViewController {
         
         let vc_login = storyboard?.instantiateViewController(withIdentifier: "vc_login") as! LoginViewController
         switchViewController(myView, _GLobalService.nowViewController, vc_login)
+        
     }
     
     //隱藏上方tool bar

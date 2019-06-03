@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-sf_sportAPP/Pods-sf_sportAPP-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework
+${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework

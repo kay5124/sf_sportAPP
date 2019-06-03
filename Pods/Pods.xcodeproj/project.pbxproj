@@ -7,20 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18683D7101DB0F09E1742D000041E1DF /* UITableViewVibrantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEF4D34F8A705CFF26692E99867C1C0 /* UITableViewVibrantCell.swift */; };
-		21B7E55FEBC330CCA1E102ED89487EF3 /* SideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CBFED5C7F432B40682D9584E0CAFA3 /* SideMenu-dummy.m */; };
-		2E51E991C3F1A20C5FE33AE691D998D4 /* Pods-sf_sportAPP-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 212DA0B56A4B7C2E98C02B3F70319212 /* Pods-sf_sportAPP-dummy.m */; };
-		41FBA0633A026681A95B4B56F88C27FC /* SideMenuTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954001B39AB14626D44FDF9E55316AD5 /* SideMenuTransition.swift */; };
-		4A4DF37518F58E616E67B6CB843FBF21 /* UISideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B2FD8026413AE249DB1766204D26C4 /* UISideMenuNavigationController.swift */; };
-		57BBCF5DAF692CE2E9F5A2BD58747936 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		886BC5795523D79AF828C00251DBF43C /* SideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B809922A60077C81535ED6243D064668 /* SideMenuManager.swift */; };
+		18683D7101DB0F09E1742D000041E1DF /* UITableViewVibrantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B155D49CE59619A8FADFF88CC7F9ACB /* UITableViewVibrantCell.swift */; };
+		21B7E55FEBC330CCA1E102ED89487EF3 /* SideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 112B263AA107AC51CE24EFF788AE5525 /* SideMenu-dummy.m */; };
+		29C63AB0D159A830DBD4F8E61F5CE5DE /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CAA714EB3518CF0093F9D9531EA3A510 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41FBA0633A026681A95B4B56F88C27FC /* SideMenuTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423D35C0DDAF748F4491B03B7DE2BE36 /* SideMenuTransition.swift */; };
+		4A4DF37518F58E616E67B6CB843FBF21 /* UISideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9541883BEEA0BC09DC306087D398A4C5 /* UISideMenuNavigationController.swift */; };
+		763EA582B030AB9A2FC93F6C1AF1EF19 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A057F7ED73094A57A31AA1DD301A7C6 /* SwiftyJSON-dummy.m */; };
+		886BC5795523D79AF828C00251DBF43C /* SideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1266CC0AA498FA8BFE4F7C0D6B9B67FC /* SideMenuManager.swift */; };
 		8E4D6AB878F3DAEA09DF0E12E9D6D420 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		D07626BED26D4DC606DBB5A42A767B96 /* SideMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BE66B23836221C5E9E39A4D4462E8F56 /* SideMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DCCBEE44180667FBBC969220E32F7BBF /* Pods-sf_sportAPP-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 572A869877C50319693CB8C4E50EDF9B /* Pods-sf_sportAPP-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		92AD5DBCE231F4B913A870E19B774ABE /* Pods-sf_sportAPP-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 212DA0B56A4B7C2E98C02B3F70319212 /* Pods-sf_sportAPP-dummy.m */; };
+		B8B9F6DA9BE6BE3679EC77D89E028E73 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9755B5774E8854DC905E13BCE9B2698 /* SwiftyJSON.swift */; };
+		BA6D4D69802EBF7C16A65FAE1F8965C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		D07626BED26D4DC606DBB5A42A767B96 /* SideMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B6652DDD5D55197FB9C5D1E96CBDBBE9 /* SideMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D440582168B3A47B9CDEB12BC194128E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		D5304A1A46E180061CB70B9580CB4612 /* Pods-sf_sportAPP-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 572A869877C50319693CB8C4E50EDF9B /* Pods-sf_sportAPP-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		46F808CF82F8BF08C65281637D0BB7D3 /* PBXContainerItemProxy */ = {
+		4EB8A9F28FFDC8809E4C80FE3A0E8A58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D118A6A04828FD3CDA8640CD2B6796D2;
+			remoteInfo = SwiftyJSON;
+		};
+		56F8A6E9AB831DA9EED9B998376BE8F8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -30,45 +41,61 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D2F23973A395C73E7A4544BCBB48B96 /* SideMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.xcconfig; sourceTree = "<group>"; };
-		14CBFED5C7F432B40682D9584E0CAFA3 /* SideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SideMenu-dummy.m"; sourceTree = "<group>"; };
+		058DB55FABC742F7D35ABD0370716649 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
+		112B263AA107AC51CE24EFF788AE5525 /* SideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SideMenu-dummy.m"; sourceTree = "<group>"; };
+		1266CC0AA498FA8BFE4F7C0D6B9B67FC /* SideMenuManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuManager.swift; path = Pod/Classes/SideMenuManager.swift; sourceTree = "<group>"; };
+		16E4918A7EB7B8107C14C2DA48D9A2B2 /* Pods_sf_sportAPP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_sf_sportAPP.framework; path = "Pods-sf_sportAPP.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A057F7ED73094A57A31AA1DD301A7C6 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
 		1D3D67BA64023B7F42838792D74A9241 /* Pods-sf_sportAPP-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-sf_sportAPP-acknowledgements.plist"; sourceTree = "<group>"; };
 		212DA0B56A4B7C2E98C02B3F70319212 /* Pods-sf_sportAPP-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-sf_sportAPP-dummy.m"; sourceTree = "<group>"; };
-		24319083C523ABAC86FEF12AA41182B6 /* SideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-prefix.pch"; sourceTree = "<group>"; };
+		2694B3E549E5FD4F12B12F1CC2C3A673 /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SideMenu.framework; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		36F17D54B4D105518646DA5C64B73C4B /* SideMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SideMenu.modulemap; sourceTree = "<group>"; };
-		3B2230F96971A4890CF83B8ED59B5E8B /* SideMenu-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SideMenu-Info.plist"; sourceTree = "<group>"; };
-		46B2FD8026413AE249DB1766204D26C4 /* UISideMenuNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UISideMenuNavigationController.swift; path = Pod/Classes/UISideMenuNavigationController.swift; sourceTree = "<group>"; };
+		423D35C0DDAF748F4491B03B7DE2BE36 /* SideMenuTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuTransition.swift; path = Pod/Classes/SideMenuTransition.swift; sourceTree = "<group>"; };
 		535DA4220A58AEC5E4244D428E85B402 /* Pods-sf_sportAPP-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-sf_sportAPP-frameworks.sh"; sourceTree = "<group>"; };
 		572A869877C50319693CB8C4E50EDF9B /* Pods-sf_sportAPP-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-sf_sportAPP-umbrella.h"; sourceTree = "<group>"; };
+		5BEC8086C6D33DDB73AEC4C65E825CC5 /* SideMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SideMenu.modulemap; sourceTree = "<group>"; };
+		5D16A250E8F9E956E8DF6BE3C9FB48C1 /* SideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-prefix.pch"; sourceTree = "<group>"; };
 		61866A9F8EE16075C1F889F5FC0EF4DE /* Pods-sf_sportAPP-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-sf_sportAPP-Info.plist"; sourceTree = "<group>"; };
-		6EEF4D34F8A705CFF26692E99867C1C0 /* UITableViewVibrantCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITableViewVibrantCell.swift; path = Pod/Classes/UITableViewVibrantCell.swift; sourceTree = "<group>"; };
+		63E0658A69DDD6B7ABCE9A8CAC26BBE7 /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
+		6B155D49CE59619A8FADFF88CC7F9ACB /* UITableViewVibrantCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITableViewVibrantCell.swift; path = Pod/Classes/UITableViewVibrantCell.swift; sourceTree = "<group>"; };
 		75FDB630D180AFF8B41EEB684663558E /* Pods-sf_sportAPP-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-sf_sportAPP-acknowledgements.markdown"; sourceTree = "<group>"; };
-		954001B39AB14626D44FDF9E55316AD5 /* SideMenuTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuTransition.swift; path = Pod/Classes/SideMenuTransition.swift; sourceTree = "<group>"; };
+		7645C828585BC8E53DDA4BEAB1E586D6 /* SideMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.xcconfig; sourceTree = "<group>"; };
+		91AE8D7466A3BE3E8248B26DDD8BA7E6 /* SwiftyJSON-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyJSON-Info.plist"; sourceTree = "<group>"; };
+		9541883BEEA0BC09DC306087D398A4C5 /* UISideMenuNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UISideMenuNavigationController.swift; path = Pod/Classes/UISideMenuNavigationController.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B809922A60077C81535ED6243D064668 /* SideMenuManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuManager.swift; path = Pod/Classes/SideMenuManager.swift; sourceTree = "<group>"; };
-		BE66B23836221C5E9E39A4D4462E8F56 /* SideMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-umbrella.h"; sourceTree = "<group>"; };
-		C5327DEB6A9481F301C3F855B51E6E5E /* Pods_sf_sportAPP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_sf_sportAPP.framework; path = "Pods-sf_sportAPP.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6652DDD5D55197FB9C5D1E96CBDBBE9 /* SideMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-umbrella.h"; sourceTree = "<group>"; };
+		B9755B5774E8854DC905E13BCE9B2698 /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON/SwiftyJSON.swift; sourceTree = "<group>"; };
 		C8B8E94ECFFF3517085E5EB1FB638D28 /* Pods-sf_sportAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-sf_sportAPP.debug.xcconfig"; sourceTree = "<group>"; };
-		D0BCF48ED3F2296C909D19899B55C496 /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SideMenu.framework; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAA714EB3518CF0093F9D9531EA3A510 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
+		D7E31BA7F44432D67AB2E23209DD5998 /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
 		DA9B92B7B9D26045E20441165264BFB6 /* Pods-sf_sportAPP.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-sf_sportAPP.modulemap"; sourceTree = "<group>"; };
 		E4F4F3D420E1FE907AF4DD6CFB740170 /* Pods-sf_sportAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-sf_sportAPP.release.xcconfig"; sourceTree = "<group>"; };
+		EC10CB95B2ADC3915130B7836308E8BA /* SideMenu-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SideMenu-Info.plist"; sourceTree = "<group>"; };
+		FEA83A30F808ED1CCC06959C44C9100D /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		57F59F4F98A4C4810A148DF776B9B5BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA6D4D69802EBF7C16A65FAE1F8965C2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		785F3CF9CD31C6AC627F6C5E61E2F916 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D440582168B3A47B9CDEB12BC194128E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B140B13CE7B18C1613F9628F0F445F61 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8E4D6AB878F3DAEA09DF0E12E9D6D420 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F02FB530F622D6E319522A0CCFAA8866 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				57BBCF5DAF692CE2E9F5A2BD58747936 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,27 +119,17 @@
 			path = "Target Support Files/Pods-sf_sportAPP";
 			sourceTree = "<group>";
 		};
-		477650FC4DC9C0562786E28D3A040A23 /* Products */ = {
+		30EB8E3CDA7052B7BD77743FDD0DD228 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				C5327DEB6A9481F301C3F855B51E6E5E /* Pods_sf_sportAPP.framework */,
-				D0BCF48ED3F2296C909D19899B55C496 /* SideMenu.framework */,
+				1266CC0AA498FA8BFE4F7C0D6B9B67FC /* SideMenuManager.swift */,
+				423D35C0DDAF748F4491B03B7DE2BE36 /* SideMenuTransition.swift */,
+				9541883BEEA0BC09DC306087D398A4C5 /* UISideMenuNavigationController.swift */,
+				6B155D49CE59619A8FADFF88CC7F9ACB /* UITableViewVibrantCell.swift */,
+				9E39FB6D112D369B252A79A7187B44C2 /* Support Files */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		494F14F70924146216E21C9B7A5C3612 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				36F17D54B4D105518646DA5C64B73C4B /* SideMenu.modulemap */,
-				0D2F23973A395C73E7A4544BCBB48B96 /* SideMenu.xcconfig */,
-				14CBFED5C7F432B40682D9584E0CAFA3 /* SideMenu-dummy.m */,
-				3B2230F96971A4890CF83B8ED59B5E8B /* SideMenu-Info.plist */,
-				24319083C523ABAC86FEF12AA41182B6 /* SideMenu-prefix.pch */,
-				BE66B23836221C5E9E39A4D4462E8F56 /* SideMenu-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SideMenu";
+			name = SideMenu;
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 		50D8A3973573FF81B0812A19DF00D781 /* Targets Support Files */ = {
@@ -123,25 +140,27 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		7155084DE1C39A2ECAC0E620D169887D /* SideMenu */ = {
+		7E57846FEA61DA7588442A2CF4F688DE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B809922A60077C81535ED6243D064668 /* SideMenuManager.swift */,
-				954001B39AB14626D44FDF9E55316AD5 /* SideMenuTransition.swift */,
-				46B2FD8026413AE249DB1766204D26C4 /* UISideMenuNavigationController.swift */,
-				6EEF4D34F8A705CFF26692E99867C1C0 /* UITableViewVibrantCell.swift */,
-				494F14F70924146216E21C9B7A5C3612 /* Support Files */,
-			);
-			name = SideMenu;
-			path = SideMenu;
-			sourceTree = "<group>";
-		};
-		83D0C43857BE7BA3B47029F87629C870 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7155084DE1C39A2ECAC0E620D169887D /* SideMenu */,
+				30EB8E3CDA7052B7BD77743FDD0DD228 /* SideMenu */,
+				E47831CE1B7F3DB1D50B4A7471840903 /* SwiftyJSON */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9E39FB6D112D369B252A79A7187B44C2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5BEC8086C6D33DDB73AEC4C65E825CC5 /* SideMenu.modulemap */,
+				7645C828585BC8E53DDA4BEAB1E586D6 /* SideMenu.xcconfig */,
+				112B263AA107AC51CE24EFF788AE5525 /* SideMenu-dummy.m */,
+				EC10CB95B2ADC3915130B7836308E8BA /* SideMenu-Info.plist */,
+				5D16A250E8F9E956E8DF6BE3C9FB48C1 /* SideMenu-prefix.pch */,
+				B6652DDD5D55197FB9C5D1E96CBDBBE9 /* SideMenu-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SideMenu";
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -152,13 +171,27 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		CAA3230391517AF4532FB6EE47B5B37F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				63E0658A69DDD6B7ABCE9A8CAC26BBE7 /* SwiftyJSON.modulemap */,
+				D7E31BA7F44432D67AB2E23209DD5998 /* SwiftyJSON.xcconfig */,
+				1A057F7ED73094A57A31AA1DD301A7C6 /* SwiftyJSON-dummy.m */,
+				91AE8D7466A3BE3E8248B26DDD8BA7E6 /* SwiftyJSON-Info.plist */,
+				058DB55FABC742F7D35ABD0370716649 /* SwiftyJSON-prefix.pch */,
+				CAA714EB3518CF0093F9D9531EA3A510 /* SwiftyJSON-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyJSON";
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				83D0C43857BE7BA3B47029F87629C870 /* Pods */,
-				477650FC4DC9C0562786E28D3A040A23 /* Products */,
+				7E57846FEA61DA7588442A2CF4F688DE /* Pods */,
+				F657A5DC6D92832DDD1698235E298CA0 /* Products */,
 				50D8A3973573FF81B0812A19DF00D781 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -169,6 +202,26 @@
 				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E47831CE1B7F3DB1D50B4A7471840903 /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				B9755B5774E8854DC905E13BCE9B2698 /* SwiftyJSON.swift */,
+				CAA3230391517AF4532FB6EE47B5B37F /* Support Files */,
+			);
+			name = SwiftyJSON;
+			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		F657A5DC6D92832DDD1698235E298CA0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				16E4918A7EB7B8107C14C2DA48D9A2B2 /* Pods_sf_sportAPP.framework */,
+				2694B3E549E5FD4F12B12F1CC2C3A673 /* SideMenu.framework */,
+				FEA83A30F808ED1CCC06959C44C9100D /* SwiftyJSON.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,11 +235,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5F68405798022F9C912FBCB7320E1984 /* Headers */ = {
+		D5FD500616E7B3585CDC612B217AB8EF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCCBEE44180667FBBC969220E32F7BBF /* Pods-sf_sportAPP-umbrella.h in Headers */,
+				29C63AB0D159A830DBD4F8E61F5CE5DE /* SwiftyJSON-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F55054E347A71984EDAD69AEA43A857D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5304A1A46E180061CB70B9580CB4612 /* Pods-sf_sportAPP-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,26 +269,45 @@
 			);
 			name = SideMenu;
 			productName = SideMenu;
-			productReference = D0BCF48ED3F2296C909D19899B55C496 /* SideMenu.framework */;
+			productReference = 2694B3E549E5FD4F12B12F1CC2C3A673 /* SideMenu.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D8D6C1E84A64A29D1137FC3C8016240C /* Pods-sf_sportAPP */ = {
+		D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 62C1F6D60CE596D97B0E747CBC1A540E /* Build configuration list for PBXNativeTarget "Pods-sf_sportAPP" */;
+			buildConfigurationList = 500983288FD27F691001EEF004174E82 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
 			buildPhases = (
-				5F68405798022F9C912FBCB7320E1984 /* Headers */,
-				FBCEB83C1E66DDD82E49FA0EFE0007A3 /* Sources */,
-				F02FB530F622D6E319522A0CCFAA8866 /* Frameworks */,
-				0CD240F44F76DD71B45DF93E3B0BED73 /* Resources */,
+				D5FD500616E7B3585CDC612B217AB8EF /* Headers */,
+				1C23F93016AD02D1E2389C53E71EF604 /* Sources */,
+				57F59F4F98A4C4810A148DF776B9B5BE /* Frameworks */,
+				04D10243A21F1712662C92EBCC5385D1 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7E289424B0ECB9BC9156EF7BDC77EC6D /* PBXTargetDependency */,
+			);
+			name = SwiftyJSON;
+			productName = SwiftyJSON;
+			productReference = FEA83A30F808ED1CCC06959C44C9100D /* SwiftyJSON.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D8D6C1E84A64A29D1137FC3C8016240C /* Pods-sf_sportAPP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E26D482567F48FD664B1B9B006CD89C0 /* Build configuration list for PBXNativeTarget "Pods-sf_sportAPP" */;
+			buildPhases = (
+				F55054E347A71984EDAD69AEA43A857D /* Headers */,
+				EC9633F54374CE0DE9D65DF6FD014A78 /* Sources */,
+				785F3CF9CD31C6AC627F6C5E61E2F916 /* Frameworks */,
+				D8DBF04984E3864B262A55ADC063A533 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D6F97322E1D536474E460D64ED56DC0 /* PBXTargetDependency */,
+				C434DEE51D00CFE2094C2F35F2810899 /* PBXTargetDependency */,
 			);
 			name = "Pods-sf_sportAPP";
 			productName = "Pods-sf_sportAPP";
-			productReference = C5327DEB6A9481F301C3F855B51E6E5E /* Pods_sf_sportAPP.framework */;
+			productReference = 16E4918A7EB7B8107C14C2DA48D9A2B2 /* Pods_sf_sportAPP.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -247,18 +327,19 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 477650FC4DC9C0562786E28D3A040A23 /* Products */;
+			productRefGroup = F657A5DC6D92832DDD1698235E298CA0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				D8D6C1E84A64A29D1137FC3C8016240C /* Pods-sf_sportAPP */,
 				C4A0A7D8591B67FB75E2E8D215E3735B /* SideMenu */,
+				D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0CD240F44F76DD71B45DF93E3B0BED73 /* Resources */ = {
+		04D10243A21F1712662C92EBCC5385D1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -272,9 +353,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D8DBF04984E3864B262A55ADC063A533 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1C23F93016AD02D1E2389C53E71EF604 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				763EA582B030AB9A2FC93F6C1AF1EF19 /* SwiftyJSON-dummy.m in Sources */,
+				B8B9F6DA9BE6BE3679EC77D89E028E73 /* SwiftyJSON.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28DB81FA894AD8B85882E33A53E25A74 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -287,29 +384,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FBCEB83C1E66DDD82E49FA0EFE0007A3 /* Sources */ = {
+		EC9633F54374CE0DE9D65DF6FD014A78 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E51E991C3F1A20C5FE33AE691D998D4 /* Pods-sf_sportAPP-dummy.m in Sources */,
+				92AD5DBCE231F4B913A870E19B774ABE /* Pods-sf_sportAPP-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7E289424B0ECB9BC9156EF7BDC77EC6D /* PBXTargetDependency */ = {
+		7D6F97322E1D536474E460D64ED56DC0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SideMenu;
 			target = C4A0A7D8591B67FB75E2E8D215E3735B /* SideMenu */;
-			targetProxy = 46F808CF82F8BF08C65281637D0BB7D3 /* PBXContainerItemProxy */;
+			targetProxy = 56F8A6E9AB831DA9EED9B998376BE8F8 /* PBXContainerItemProxy */;
+		};
+		C434DEE51D00CFE2094C2F35F2810899 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyJSON;
+			target = D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */;
+			targetProxy = 4EB8A9F28FFDC8809E4C80FE3A0E8A58 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		190C856D96FC23923AE44CFD110504C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D2F23973A395C73E7A4544BCBB48B96 /* SideMenu.xcconfig */;
+			baseConfigurationReference = 7645C828585BC8E53DDA4BEAB1E586D6 /* SideMenu.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -409,7 +512,7 @@
 		};
 		30DB7AE26BF29CBB16864390AFF52CE8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D2F23973A395C73E7A4544BCBB48B96 /* SideMenu.xcconfig */;
+			baseConfigurationReference = 7645C828585BC8E53DDA4BEAB1E586D6 /* SideMenu.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -444,7 +547,7 @@
 			};
 			name = Release;
 		};
-		57A88345FB0346C1AC9192ACC6B9E596 /* Release */ = {
+		825168177976C8587D4001BBAC5BFE8E /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E4F4F3D420E1FE907AF4DD6CFB740170 /* Pods-sf_sportAPP.release.xcconfig */;
 			buildSettings = {
@@ -482,6 +585,80 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		96EFDB97F9EFB8EEBBA65C5AA6A9488E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7E31BA7F44432D67AB2E23209DD5998 /* SwiftyJSON.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyJSON;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9EB4C8F9989B97C7737B92E2506CE311 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8B8E94ECFFF3517085E5EB1FB638D28 /* Pods-sf_sportAPP.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-sf_sportAPP/Pods-sf_sportAPP-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-sf_sportAPP/Pods-sf_sportAPP.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -543,12 +720,10 @@
 			};
 			name = Release;
 		};
-		FCBE744269442FF34E87B731E40B8492 /* Debug */ = {
+		E7E18A3E8278024C2F3A5AA8E8C2EFCF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C8B8E94ECFFF3517085E5EB1FB638D28 /* Pods-sf_sportAPP.debug.xcconfig */;
+			baseConfigurationReference = D7E31BA7F44432D67AB2E23209DD5998 /* SwiftyJSON.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -558,23 +733,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-sf_sportAPP/Pods-sf_sportAPP-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-sf_sportAPP/Pods-sf_sportAPP.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyJSON;
+				PRODUCT_NAME = SwiftyJSON;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -593,11 +767,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		62C1F6D60CE596D97B0E747CBC1A540E /* Build configuration list for PBXNativeTarget "Pods-sf_sportAPP" */ = {
+		500983288FD27F691001EEF004174E82 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FCBE744269442FF34E87B731E40B8492 /* Debug */,
-				57A88345FB0346C1AC9192ACC6B9E596 /* Release */,
+				E7E18A3E8278024C2F3A5AA8E8C2EFCF /* Debug */,
+				96EFDB97F9EFB8EEBBA65C5AA6A9488E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E26D482567F48FD664B1B9B006CD89C0 /* Build configuration list for PBXNativeTarget "Pods-sf_sportAPP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9EB4C8F9989B97C7737B92E2506CE311 /* Debug */,
+				825168177976C8587D4001BBAC5BFE8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

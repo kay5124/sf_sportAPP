@@ -1,9 +1,46 @@
 import UIKit
 import Foundation
 import SideMenu
+import SwiftyJSON
 
 class _GLobalService {
     public static let thisPhoneModel = UIDevice.modelName
+    
+    public static var noticeData: Array<noticeModel> = Array()
+    
+//    public static var noticeData: JSON =
+//        JSON(
+//            arrayLiteral: [
+//                "noticeType" : "公告",
+//                "noticeDate" : "2019/05/02 17:15:00",
+//                "noticeContent" : "測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試",
+//                "isExpan" : false
+//            ],
+//            [
+//                "noticeType" : "足球",
+//                "noticeDate" : "2019/05/02 17:15:00",
+//                "noticeContent" : "測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試",
+//                "isExpan" : false
+//            ],
+//            [
+//                "noticeType" : "系統",
+//                "noticeDate" : "2019/05/02 17:15:00",
+//                "noticeContent" : "測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試",
+//                "isExpan" : false
+//            ],
+//            [
+//                "noticeType" : "籃球",
+//                "noticeDate" : "2019/05/02 17:15:00",
+//                "noticeContent" : "測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試",
+//                "isExpan" : false
+//            ],
+//            [
+//                "noticeType" : "其他",
+//                "noticeDate" : "2019/05/02 17:15:00",
+//                "noticeContent" : "測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試",
+//                "isExpan" : false
+//            ]
+//    )
     
     public static let sideMenuItems = ["0_遊戲主頁":"ic_home",
                                        "1_投注記錄":"ic_record",

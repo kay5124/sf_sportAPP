@@ -134,7 +134,7 @@ class CrossCalculatorView: UIView {
         {
             tempText = String(tempText.dropLast())
         }
-            //逗號 只能容許一個
+        //逗號 只能容許一個
         else if sender.titleLabel?.text == "."
         {
             if !tempText.isEmpty && !tempText.contains("."){
@@ -156,30 +156,33 @@ class CrossCalculatorView: UIView {
     @objc public func ShowBetMoneyKeyBoard(){
         
         if isBetMoneyKB_Show && !isFirstAwake { return }
+        
         //隱藏上方鍵盤
-        nowClickBet = -1
-        crossTableView.reloadData()
+        self.nowClickBet = -1
+        self.crossTableView.reloadData()
         
-        bottomBetViewHeight.constant = bottomBetViewHeight.constant + 90
-        betMoneyKeyboardViewHeight.constant = 90
-        betMoneyKeyboardView.isHidden = false
-        betMoney.layer.borderWidth = 1
-        betMoney.layer.cornerRadius = 5
+        self.bottomBetViewHeight.constant = self.bottomBetViewHeight.constant + 90
+        self.betMoneyKeyboardViewHeight.constant = 90
+        self.betMoneyKeyboardView.isHidden = false
+        self.betMoney.layer.borderWidth = 1
+        self.betMoney.layer.cornerRadius = 5
         
-        isBetMoneyKB_Show = true
+        self.isBetMoneyKB_Show = true
+        
     }
     
     @objc public func HideBetMoneyKeyBoard(){
         
         if !isBetMoneyKB_Show && !isFirstAwake { return }
         
-        bottomBetViewHeight.constant = bottomBetViewHeight.constant - 90
-        betMoneyKeyboardViewHeight.constant = 0
-        betMoneyKeyboardView.isHidden = true
-        betMoney.layer.borderWidth = 0
-        betMoney.layer.cornerRadius = 0
+        self.bottomBetViewHeight.constant = self.bottomBetViewHeight.constant - 90
+        self.betMoneyKeyboardViewHeight.constant = 0
+        self.betMoneyKeyboardView.isHidden = true
+        self.betMoney.layer.borderWidth = 0
+        self.betMoney.layer.cornerRadius = 0
         
-        isBetMoneyKB_Show = false
+        self.isBetMoneyKB_Show = false
+        
     }
     
     public func HideAllOddsKB(){
@@ -202,27 +205,36 @@ class CrossCalculatorView: UIView {
     @objc func CalcBetMoney(){
         let _betMoney = Float(betMoney.text!)
         var result: Float = 0
-        var calc1: Float = 0
+        var calc: Float = 1
+        var isNotCross: Bool = false
         for item in crossTableView.visibleCells {
             let cell = item as! CrossCalculatorTableViewCell
             if !cell.oddsText.text!.isEmpty {
+                let odds = Float(cell.oddsText.text!)
+                
                 if cell.crossTypeLabel.text! == "全贏" {
-                    let odds = Float(cell.oddsText.text!)
-                    calc1 += Float( _betMoney! * Float( 1 + odds! ) - _betMoney!)
+                    calc *= Float( 1 + odds! )
                 }
                 else if cell.crossTypeLabel.text! == "全輸" {
-                    result -= Float(_betMoney!)
+                    isNotCross = true
                 }
                 else if cell.crossTypeLabel.text! == "+" {
-                    
+                    let oddsPersent = Float(cell.crossPersentText.text!)! / 100
+                    calc *= Float( 1 + Float( odds! * oddsPersent ) )
                 }
                 else if cell.crossTypeLabel.text! == "-" {
-                    
+                    let oddsPersent = Float(cell.crossPersentText.text!)! / 100
+                    calc *= Float( 1 - oddsPersent )
                 }
             }
         }
+        result += (_betMoney! * calc) - _betMoney!
         
-        betMoney.text = String(result)
+        if isNotCross {
+            result = 0 - _betMoney!
+        }
+        
+        winMoney.text = String(lroundf(result))
     }
     
     @objc func ClearAll(){
@@ -232,6 +244,8 @@ class CrossCalculatorView: UIView {
             _GLobalService.oddsPersent[i] = ""
             _GLobalService.oddsCrossType[i] = "全贏"
         }
+        betMoney.text = ""
+        winMoney.text = ""
         crossTableView.reloadData()
     }
     
@@ -261,7 +275,7 @@ extension CrossCalculatorView: UITableViewDataSource{
         cell.crossTypeLabel.layer.borderColor = UIColor.lightGray.cgColor
         
         cell.crossPersentText.placeholder = "100"
-        cell.crossPersentText.text = _GLobalService.oddsPersent[indexPath.row]
+//        cell.crossPersentText.text = _GLobalService.oddsPersent[indexPath.row]
         
         cell.oddsText.layer.borderColor = UIColor.blue.cgColor
         cell.crossPersentText.layer.borderColor = UIColor.blue.cgColor
@@ -321,9 +335,13 @@ extension CrossCalculatorView: UITableViewDataSource{
         if cell.crossTypeLabel.text! == "全贏" || cell.crossTypeLabel.text! == "全輸" || cell.crossTypeLabel.text! == "平" {
             cell.crossPersentText.isEnabled = false
             cell.crossPersentText.text = "100"
+        }else if  cell.crossTypeLabel.text! == "平"{
+            cell.crossPersentText.isEnabled = false
+            cell.crossPersentText.text = "0"
         }else{
             cell.crossPersentText.isEnabled = true
-            cell.crossPersentText.text = ""
+//            cell.crossPersentText.text = ""
+            cell.crossPersentText.text = _GLobalService.oddsPersent[indexPath.row]
         }
         
         if cell.crossTypeLabel.text! == "全贏" || cell.crossTypeLabel.text! == "+" {

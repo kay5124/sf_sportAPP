@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		28D61AEC032A7DA5FB75699A /* Pods_sf_sportAPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A45F76169192D2B27D06341 /* Pods_sf_sportAPP.framework */; };
+		7183E7BC22A4EE80009E7F86 /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183E7BA22A4EE80009E7F86 /* NoticeTableViewCell.swift */; };
+		7183E7BD22A4EE80009E7F86 /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7183E7BB22A4EE80009E7F86 /* NoticeTableViewCell.xib */; };
+		7183E7BF22A5021D009E7F86 /* noticeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183E7BE22A5021D009E7F86 /* noticeModel.swift */; };
 		7197BA0F22979CDB0012BAE4 /* GlobalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7197BA0E22979CDB0012BAE4 /* GlobalViewController.swift */; };
 		7197BA1222979E840012BAE4 /* HandicapInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7197BA1022979E840012BAE4 /* HandicapInstructionView.swift */; };
 		7197BA1322979E840012BAE4 /* HandicapInstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7197BA1122979E840012BAE4 /* HandicapInstructionView.xib */; };
@@ -51,6 +54,9 @@
 
 /* Begin PBXFileReference section */
 		3F34C4778326A4B210F7C970 /* Pods-sf_sportAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sf_sportAPP.debug.xcconfig"; path = "Target Support Files/Pods-sf_sportAPP/Pods-sf_sportAPP.debug.xcconfig"; sourceTree = "<group>"; };
+		7183E7BA22A4EE80009E7F86 /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
+		7183E7BB22A4EE80009E7F86 /* NoticeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeTableViewCell.xib; sourceTree = "<group>"; };
+		7183E7BE22A5021D009E7F86 /* noticeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noticeModel.swift; sourceTree = "<group>"; };
 		7197BA0E22979CDB0012BAE4 /* GlobalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalViewController.swift; sourceTree = "<group>"; };
 		7197BA1022979E840012BAE4 /* HandicapInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandicapInstructionView.swift; sourceTree = "<group>"; };
 		7197BA1122979E840012BAE4 /* HandicapInstructionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HandicapInstructionView.xib; sourceTree = "<group>"; };
@@ -171,6 +177,7 @@
 				71C503F222924BC700CCB591 /* cornerModle.swift */,
 				71C503FB2292775200CCB591 /* viewTransitionModle.swift */,
 				71DD4E03229683B000B9029C /* phoneModel.swift */,
+				7183E7BE22A5021D009E7F86 /* noticeModel.swift */,
 			);
 			path = Modle;
 			sourceTree = "<group>";
@@ -187,6 +194,7 @@
 				7197BA162297BE2B0012BAE4 /* HandicapInsTableViewCell.swift */,
 				719D8D66229D105300AEDE4F /* HandicapSampleTableViewCell.swift */,
 				719D8D6E229E4D8D00AEDE4F /* NoticeView.swift */,
+				7183E7BA22A4EE80009E7F86 /* NoticeTableViewCell.swift */,
 				719D8D72229E50DC00AEDE4F /* CusDataPickerView.swift */,
 				719D8D76229E76FD00AEDE4F /* CrossCalculatorView.swift */,
 				719D8D7A229E7D4900AEDE4F /* CrossCalculatorTableViewCell.swift */,
@@ -206,6 +214,7 @@
 				7197BA172297BE2B0012BAE4 /* HandicapInsTableViewCell.xib */,
 				719D8D67229D105300AEDE4F /* HandicapSampleTableViewCell.xib */,
 				719D8D6F229E4D8D00AEDE4F /* NoticeView.xib */,
+				7183E7BB22A4EE80009E7F86 /* NoticeTableViewCell.xib */,
 				719D8D73229E50DC00AEDE4F /* CusDataPickerView.xib */,
 				719D8D77229E76FD00AEDE4F /* CrossCalculatorView.xib */,
 				719D8D7B229E7D4900AEDE4F /* CrossCalculatorTableViewCell.xib */,
@@ -303,6 +312,7 @@
 				719D8D7D229E7D4900AEDE4F /* CrossCalculatorTableViewCell.xib in Resources */,
 				719D8D75229E50DC00AEDE4F /* CusDataPickerView.xib in Resources */,
 				71DD4DFE2295474F00B9029C /* sportView.xib in Resources */,
+				7183E7BD22A4EE80009E7F86 /* NoticeTableViewCell.xib in Resources */,
 				71C5040B2292BFE800CCB591 /* MenuTableViewCell.xib in Resources */,
 				71C503DE22924A2800CCB591 /* Main.storyboard in Resources */,
 			);
@@ -375,12 +385,14 @@
 				7197BA182297BE2B0012BAE4 /* HandicapInsTableViewCell.swift in Sources */,
 				71DD4DF52293F10B00B9029C /* LeagueView.swift in Sources */,
 				719D8D78229E76FD00AEDE4F /* CrossCalculatorView.swift in Sources */,
+				7183E7BC22A4EE80009E7F86 /* NoticeTableViewCell.swift in Sources */,
 				719D8D68229D105300AEDE4F /* HandicapSampleTableViewCell.swift in Sources */,
 				71DD4DF22293EF9C00B9029C /* CustomDialogViewController.swift in Sources */,
 				719D8D7C229E7D4900AEDE4F /* CrossCalculatorTableViewCell.swift in Sources */,
 				71DD4DF9229526CF00B9029C /* LeagueTableViewCell.swift in Sources */,
 				71C5040A2292BFE800CCB591 /* MenuTableViewCell.swift in Sources */,
 				7197BA0F22979CDB0012BAE4 /* GlobalViewController.swift in Sources */,
+				7183E7BF22A5021D009E7F86 /* noticeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

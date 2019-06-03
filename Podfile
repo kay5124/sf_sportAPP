@@ -8,5 +8,6 @@ target 'sf_sportAPP' do
 
   # Pods for sf_sportAPP
   pod 'SideMenu'
+  pod 'SwiftyJSON', '~> 4.0'
 
 end
