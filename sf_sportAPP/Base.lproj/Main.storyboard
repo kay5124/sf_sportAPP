@@ -289,6 +289,9 @@
                                     <constraint firstItem="3jl-VE-8ve" firstAttribute="centerY" secondItem="iro-lh-ISy" secondAttribute="centerY" id="y3a-Pr-Ly4"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1I-2c-Wam">
+                                <rect key="frame" x="0.0" y="139" width="414" height="652"/>
+                            </containerView>
                             <view hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7xh-aa-dri">
                                 <rect key="frame" x="20" y="152" width="64" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -437,13 +440,17 @@
                             <constraint firstItem="yP4-D8-NNE" firstAttribute="leading" secondItem="Bfg-XD-Hv5" secondAttribute="leading" id="7ey-7c-7AK"/>
                             <constraint firstItem="fy7-us-A9Z" firstAttribute="leading" secondItem="Bfg-XD-Hv5" secondAttribute="leading" id="9Zh-6Y-gZ7"/>
                             <constraint firstItem="iro-lh-ISy" firstAttribute="trailing" secondItem="Bfg-XD-Hv5" secondAttribute="trailing" id="Bz2-Tr-Tnk"/>
+                            <constraint firstItem="V1I-2c-Wam" firstAttribute="leading" secondItem="Bfg-XD-Hv5" secondAttribute="leading" id="Dyq-9i-DpP"/>
                             <constraint firstItem="yP4-D8-NNE" firstAttribute="trailing" secondItem="Bfg-XD-Hv5" secondAttribute="trailing" id="IV1-V1-q1g"/>
                             <constraint firstItem="iro-lh-ISy" firstAttribute="leading" secondItem="Bfg-XD-Hv5" secondAttribute="leading" id="JpY-lv-dkP"/>
                             <constraint firstItem="yP4-D8-NNE" firstAttribute="bottom" secondItem="Bfg-XD-Hv5" secondAttribute="bottom" id="O0I-fq-paN"/>
                             <constraint firstItem="riI-HR-gHl" firstAttribute="leading" secondItem="Bfg-XD-Hv5" secondAttribute="leading" id="Rlr-6I-NmE"/>
                             <constraint firstItem="5kA-ZT-SHW" firstAttribute="trailing" secondItem="Bfg-XD-Hv5" secondAttribute="trailing" id="Uj9-sh-Z5Z"/>
+                            <constraint firstItem="V1I-2c-Wam" firstAttribute="trailing" secondItem="Bfg-XD-Hv5" secondAttribute="trailing" id="aUb-M0-iFG"/>
+                            <constraint firstItem="V1I-2c-Wam" firstAttribute="top" secondItem="iro-lh-ISy" secondAttribute="bottom" id="brL-ko-vie"/>
                             <constraint firstItem="iro-lh-ISy" firstAttribute="top" secondItem="riI-HR-gHl" secondAttribute="bottom" id="cUj-3P-Kh5"/>
                             <constraint firstItem="5kA-ZT-SHW" firstAttribute="leading" secondItem="Bfg-XD-Hv5" secondAttribute="leading" id="fGG-zR-pYH"/>
+                            <constraint firstItem="fy7-us-A9Z" firstAttribute="top" secondItem="V1I-2c-Wam" secondAttribute="bottom" id="kmi-dU-t4r"/>
                             <constraint firstItem="yP4-D8-NNE" firstAttribute="top" secondItem="fy7-us-A9Z" secondAttribute="bottom" constant="10" id="v4Q-bb-imE"/>
                             <constraint firstItem="fy7-us-A9Z" firstAttribute="top" secondItem="5kA-ZT-SHW" secondAttribute="bottom" constant="20" id="yvu-hC-hzG"/>
                             <constraint firstItem="Bfg-XD-Hv5" firstAttribute="trailing" secondItem="fy7-us-A9Z" secondAttribute="trailing" id="z1o-q3-LBm"/>
@@ -456,6 +463,7 @@
                         <outlet property="betRecordStackView" destination="CM3-JF-8mK" id="Q4p-RT-tVg"/>
                         <outlet property="customView" destination="5kA-ZT-SHW" id="7k4-8p-qMF"/>
                         <outlet property="footerStackView" destination="yP4-D8-NNE" id="nlJ-Pb-zJV"/>
+                        <outlet property="gameContainerView" destination="V1I-2c-Wam" id="DHK-GV-PUZ"/>
                         <outlet property="gameCrossBtn" destination="3jl-VE-8ve" id="kHe-Av-qVG"/>
                         <outlet property="gameLineBtn" destination="8Y1-kx-gBd" id="SqQ-Wh-Zhq"/>
                         <outlet property="gameLiveBtn" destination="Sn2-ak-4Xg" id="3an-RZ-LZa"/>

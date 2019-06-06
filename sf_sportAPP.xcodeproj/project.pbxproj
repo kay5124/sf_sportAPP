@@ -11,6 +11,15 @@
 		7183E7BC22A4EE80009E7F86 /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183E7BA22A4EE80009E7F86 /* NoticeTableViewCell.swift */; };
 		7183E7BD22A4EE80009E7F86 /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7183E7BB22A4EE80009E7F86 /* NoticeTableViewCell.xib */; };
 		7183E7BF22A5021D009E7F86 /* noticeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183E7BE22A5021D009E7F86 /* noticeModel.swift */; };
+		7183E7C222A57A2A009E7F86 /* mainGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183E7C022A57A2A009E7F86 /* mainGameView.swift */; };
+		7183E7C322A57A2A009E7F86 /* mainGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7183E7C122A57A2A009E7F86 /* mainGameView.xib */; };
+		7183E7C522A622F3009E7F86 /* gameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183E7C422A622F3009E7F86 /* gameModel.swift */; };
+		7183E7C922A708BB009E7F86 /* mainGameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7183E7C722A708BB009E7F86 /* mainGameTableViewCell.xib */; };
+		7183E7D322A729F6009E7F86 /* mainGameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183E7D222A729F6009E7F86 /* mainGameTableViewCell.swift */; };
+		7183E7D622A8DA62009E7F86 /* m_Game_TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183E7D422A8DA62009E7F86 /* m_Game_TeamTableViewCell.swift */; };
+		7183E7D722A8DA62009E7F86 /* m_Game_TeamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7183E7D522A8DA62009E7F86 /* m_Game_TeamTableViewCell.xib */; };
+		7183E7DA22A8F035009E7F86 /* m_Game_BetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183E7D822A8F035009E7F86 /* m_Game_BetTableViewCell.swift */; };
+		7183E7DB22A8F035009E7F86 /* m_Game_BetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7183E7D922A8F035009E7F86 /* m_Game_BetTableViewCell.xib */; };
 		7197BA0F22979CDB0012BAE4 /* GlobalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7197BA0E22979CDB0012BAE4 /* GlobalViewController.swift */; };
 		7197BA1222979E840012BAE4 /* HandicapInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7197BA1022979E840012BAE4 /* HandicapInstructionView.swift */; };
 		7197BA1322979E840012BAE4 /* HandicapInstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7197BA1122979E840012BAE4 /* HandicapInstructionView.xib */; };
@@ -57,6 +66,15 @@
 		7183E7BA22A4EE80009E7F86 /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
 		7183E7BB22A4EE80009E7F86 /* NoticeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeTableViewCell.xib; sourceTree = "<group>"; };
 		7183E7BE22A5021D009E7F86 /* noticeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noticeModel.swift; sourceTree = "<group>"; };
+		7183E7C022A57A2A009E7F86 /* mainGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainGameView.swift; sourceTree = "<group>"; };
+		7183E7C122A57A2A009E7F86 /* mainGameView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = mainGameView.xib; sourceTree = "<group>"; };
+		7183E7C422A622F3009E7F86 /* gameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameModel.swift; sourceTree = "<group>"; };
+		7183E7C722A708BB009E7F86 /* mainGameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = mainGameTableViewCell.xib; sourceTree = "<group>"; };
+		7183E7D222A729F6009E7F86 /* mainGameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainGameTableViewCell.swift; sourceTree = "<group>"; };
+		7183E7D422A8DA62009E7F86 /* m_Game_TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = m_Game_TeamTableViewCell.swift; sourceTree = "<group>"; };
+		7183E7D522A8DA62009E7F86 /* m_Game_TeamTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = m_Game_TeamTableViewCell.xib; sourceTree = "<group>"; };
+		7183E7D822A8F035009E7F86 /* m_Game_BetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = m_Game_BetTableViewCell.swift; sourceTree = "<group>"; };
+		7183E7D922A8F035009E7F86 /* m_Game_BetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = m_Game_BetTableViewCell.xib; sourceTree = "<group>"; };
 		7197BA0E22979CDB0012BAE4 /* GlobalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalViewController.swift; sourceTree = "<group>"; };
 		7197BA1022979E840012BAE4 /* HandicapInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandicapInstructionView.swift; sourceTree = "<group>"; };
 		7197BA1122979E840012BAE4 /* HandicapInstructionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HandicapInstructionView.xib; sourceTree = "<group>"; };
@@ -178,6 +196,7 @@
 				71C503FB2292775200CCB591 /* viewTransitionModle.swift */,
 				71DD4E03229683B000B9029C /* phoneModel.swift */,
 				7183E7BE22A5021D009E7F86 /* noticeModel.swift */,
+				7183E7C422A622F3009E7F86 /* gameModel.swift */,
 			);
 			path = Modle;
 			sourceTree = "<group>";
@@ -185,6 +204,10 @@
 		71C503EF22924A7800CCB591 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7183E7C022A57A2A009E7F86 /* mainGameView.swift */,
+				7183E7D222A729F6009E7F86 /* mainGameTableViewCell.swift */,
+				7183E7D422A8DA62009E7F86 /* m_Game_TeamTableViewCell.swift */,
+				7183E7D822A8F035009E7F86 /* m_Game_BetTableViewCell.swift */,
 				71C504082292BFE800CCB591 /* MenuTableViewCell.swift */,
 				71DD4DF32293F10B00B9029C /* LeagueView.swift */,
 				71DD4DF7229526CF00B9029C /* LeagueTableViewCell.swift */,
@@ -205,6 +228,10 @@
 		71C503FA22924EF600CCB591 /* Views_xib */ = {
 			isa = PBXGroup;
 			children = (
+				7183E7C122A57A2A009E7F86 /* mainGameView.xib */,
+				7183E7C722A708BB009E7F86 /* mainGameTableViewCell.xib */,
+				7183E7D522A8DA62009E7F86 /* m_Game_TeamTableViewCell.xib */,
+				7183E7D922A8F035009E7F86 /* m_Game_BetTableViewCell.xib */,
 				71C504092292BFE800CCB591 /* MenuTableViewCell.xib */,
 				71DD4DF42293F10B00B9029C /* LeagueView.xib */,
 				71DD4DF8229526CF00B9029C /* LeagueTableViewCell.xib */,
@@ -311,9 +338,13 @@
 				719D8D71229E4D8D00AEDE4F /* NoticeView.xib in Resources */,
 				719D8D7D229E7D4900AEDE4F /* CrossCalculatorTableViewCell.xib in Resources */,
 				719D8D75229E50DC00AEDE4F /* CusDataPickerView.xib in Resources */,
+				7183E7D722A8DA62009E7F86 /* m_Game_TeamTableViewCell.xib in Resources */,
 				71DD4DFE2295474F00B9029C /* sportView.xib in Resources */,
 				7183E7BD22A4EE80009E7F86 /* NoticeTableViewCell.xib in Resources */,
+				7183E7DB22A8F035009E7F86 /* m_Game_BetTableViewCell.xib in Resources */,
 				71C5040B2292BFE800CCB591 /* MenuTableViewCell.xib in Resources */,
+				7183E7C322A57A2A009E7F86 /* mainGameView.xib in Resources */,
+				7183E7C922A708BB009E7F86 /* mainGameTableViewCell.xib in Resources */,
 				71C503DE22924A2800CCB591 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,6 +406,7 @@
 				71DD4DFD2295474F00B9029C /* sportView.swift in Sources */,
 				719D8D70229E4D8D00AEDE4F /* NoticeView.swift in Sources */,
 				71C503FF22927A6900CCB591 /* _Global.swift in Sources */,
+				7183E7D622A8DA62009E7F86 /* m_Game_TeamTableViewCell.swift in Sources */,
 				71DD4E04229683B000B9029C /* phoneModel.swift in Sources */,
 				71C5040322928D4800CCB591 /* HomeViewController.swift in Sources */,
 				71C503FC2292775200CCB591 /* viewTransitionModle.swift in Sources */,
@@ -383,14 +415,18 @@
 				71C504072292BD7D00CCB591 /* SideMenuViewController.swift in Sources */,
 				71C503F122924AA400CCB591 /* MainViewController.swift in Sources */,
 				7197BA182297BE2B0012BAE4 /* HandicapInsTableViewCell.swift in Sources */,
+				7183E7DA22A8F035009E7F86 /* m_Game_BetTableViewCell.swift in Sources */,
+				7183E7C222A57A2A009E7F86 /* mainGameView.swift in Sources */,
 				71DD4DF52293F10B00B9029C /* LeagueView.swift in Sources */,
 				719D8D78229E76FD00AEDE4F /* CrossCalculatorView.swift in Sources */,
 				7183E7BC22A4EE80009E7F86 /* NoticeTableViewCell.swift in Sources */,
 				719D8D68229D105300AEDE4F /* HandicapSampleTableViewCell.swift in Sources */,
 				71DD4DF22293EF9C00B9029C /* CustomDialogViewController.swift in Sources */,
+				7183E7D322A729F6009E7F86 /* mainGameTableViewCell.swift in Sources */,
 				719D8D7C229E7D4900AEDE4F /* CrossCalculatorTableViewCell.swift in Sources */,
 				71DD4DF9229526CF00B9029C /* LeagueTableViewCell.swift in Sources */,
 				71C5040A2292BFE800CCB591 /* MenuTableViewCell.swift in Sources */,
+				7183E7C522A622F3009E7F86 /* gameModel.swift in Sources */,
 				7197BA0F22979CDB0012BAE4 /* GlobalViewController.swift in Sources */,
 				7183E7BF22A5021D009E7F86 /* noticeModel.swift in Sources */,
 			);

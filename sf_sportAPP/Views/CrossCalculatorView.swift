@@ -13,7 +13,7 @@ class CrossCalculatorView: UIView {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var crossTableView: UITableView!
     @IBOutlet weak var noticeView: UIView!
-
+    
     @IBOutlet weak var betMoney: UITextField!
     @IBOutlet weak var winMoney: UITextField!
     
@@ -134,14 +134,14 @@ class CrossCalculatorView: UIView {
         {
             tempText = String(tempText.dropLast())
         }
-        //逗號 只能容許一個
+            //逗號 只能容許一個
         else if sender.titleLabel?.text == "."
         {
             if !tempText.isEmpty && !tempText.contains("."){
                 tempText += sender.titleLabel?.text ?? ""
             }
         }
-        //其餘數字
+            //其餘數字
         else
         {
             //首位數不能給0
@@ -158,8 +158,9 @@ class CrossCalculatorView: UIView {
         if isBetMoneyKB_Show && !isFirstAwake { return }
         
         //隱藏上方鍵盤
-        self.nowClickBet = -1
-        self.crossTableView.reloadData()
+        //        self.nowClickBet = -1
+        //        self.crossTableView.reloadData()
+        HideAllOddsKB(type: 0)
         
         self.bottomBetViewHeight.constant = self.bottomBetViewHeight.constant + 90
         self.betMoneyKeyboardViewHeight.constant = 90
@@ -168,6 +169,10 @@ class CrossCalculatorView: UIView {
         self.betMoney.layer.cornerRadius = 5
         
         self.isBetMoneyKB_Show = true
+        
+        UIView.animate(withDuration: 0.2, delay: 0, options: .transitionFlipFromBottom, animations: {
+            self.layoutIfNeeded()
+        }, completion: nil)
         
     }
     
@@ -183,15 +188,28 @@ class CrossCalculatorView: UIView {
         
         self.isBetMoneyKB_Show = false
         
+        UIView.animate(withDuration: 0.2, delay: 0, options: .transitionFlipFromTop, animations: {
+            self.layoutIfNeeded()
+        }, completion: nil)
+        
     }
     
-    public func HideAllOddsKB(){
+    public func HideAllOddsKB(type: Int){
         for cells in crossTableView.visibleCells {
             let cel = cells as! CrossCalculatorTableViewCell
+            let idx = crossTableView.indexPath(for: cel)
+            
             cel.keyboardHeight.constant = 0
             cel.keyboardView.isHidden = true
             cel.oddsText.layer.borderWidth = 0
             cel.oddsText.layer.cornerRadius = 0
+            cel.crossPersentText.layer.borderWidth = 0
+            cel.crossPersentText.layer.cornerRadius = 0
+            
+            if type == 0 && idx?.row == self.nowClickBet {
+                self.nowClickBet = -1
+                self.crossTableView.reloadRows(at: [idx!], with: .automatic)
+            }
         }
     }
     
@@ -203,6 +221,9 @@ class CrossCalculatorView: UIView {
     }
     
     @objc func CalcBetMoney(){
+        
+        if betMoney.text!.isEmpty { return }
+        
         let _betMoney = Float(betMoney.text!)
         var result: Float = 0
         var calc: Float = 1
@@ -246,6 +267,8 @@ class CrossCalculatorView: UIView {
         }
         betMoney.text = ""
         winMoney.text = ""
+        HideBetMoneyKeyBoard()
+        self.endEditing(true)
         crossTableView.reloadData()
     }
     
@@ -275,7 +298,7 @@ extension CrossCalculatorView: UITableViewDataSource{
         cell.crossTypeLabel.layer.borderColor = UIColor.lightGray.cgColor
         
         cell.crossPersentText.placeholder = "100"
-//        cell.crossPersentText.text = _GLobalService.oddsPersent[indexPath.row]
+        //        cell.crossPersentText.text = _GLobalService.oddsPersent[indexPath.row]
         
         cell.oddsText.layer.borderColor = UIColor.blue.cgColor
         cell.crossPersentText.layer.borderColor = UIColor.blue.cgColor
@@ -340,7 +363,7 @@ extension CrossCalculatorView: UITableViewDataSource{
             cell.crossPersentText.text = "0"
         }else{
             cell.crossPersentText.isEnabled = true
-//            cell.crossPersentText.text = ""
+            //            cell.crossPersentText.text = ""
             cell.crossPersentText.text = _GLobalService.oddsPersent[indexPath.row]
         }
         
@@ -390,7 +413,7 @@ extension CrossCalculatorView: UITableViewDataSource{
         
         if nowClickBet == Int(cell.crossNumber.text ?? "0")! - 1 { return }
         
-        HideAllOddsKB()
+        HideAllOddsKB(type: 1)
         
         _GLobalService.calcTextType = sender.type
         

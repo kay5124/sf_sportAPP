@@ -8,23 +8,85 @@
 
 import UIKit
 
-class mainGameView: UIViewController {
+class mainGameView: UIView {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var mainGameTableView: UITableView!
+    
+    public var gameData: Array<gameModel> = Array()
+    
+    override func awakeFromNib() {
+        InitViews()
+    }
+    
+    private func InitViews(){
+        
+//        mainGameTableView.allowsSelection = false
+        mainGameTableView.delaysContentTouches = false
+        mainGameTableView.separatorInset = .zero
+        mainGameTableView.separatorStyle = .singleLine
+        mainGameTableView.separatorColor = UIColor.black
+//        mainGameTableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        mainGameTableView.tableFooterView = UIView()
+        mainGameTableView.delegate = self
+        mainGameTableView.dataSource = self
+        let mainGmaeNib = UINib(nibName: "mainGameTableViewCell", bundle: nil)
+        mainGameTableView.register(mainGmaeNib, forCellReuseIdentifier: "mainGameCell")
+    }
+    
+    public static func create() -> mainGameView {
+        let selfView = Bundle.main.loadNibNamed("mainGameView", owner: self, options: nil)?.first as! mainGameView
+        return selfView
     }
 
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension mainGameView: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return gameData.count
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mainGameCell") as! mainGameTableViewCell
+        
+        cell.leagueName.text = gameData[indexPath.row].leagueName
+        //如果未展開就
+        if !gameData[indexPath.row].isExpan {
+            cell.expanLabel.text = "▼"
+        }else{
+            cell.expanLabel.text = "▲"
+            cell.teamArray = gameData[indexPath.row].gameData
+            cell.teamTableView.reloadData()
+            
+            mainGameTableView.scrollToRow(at: indexPath, at: .top, animated: true)
+            
+            cell.scrollToTop()
+        }
+        
+        return cell
+    }
+    
+    
+}
 
+extension mainGameView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        for item in mainGameTableView.visibleCells {
+            let cell = item as! mainGameTableViewCell
+            let idx = mainGameTableView.indexPath(for: cell)
+            if gameData[idx!.row].isExpan && indexPath.row != idx!.row {
+                gameData[idx!.row].isExpan = !gameData[idx!.row].isExpan
+                mainGameTableView.reloadRows(at: [idx!], with: .automatic)
+            }
+        }
+        
+        gameData[indexPath.row].isExpan = !gameData[indexPath.row].isExpan
+        mainGameTableView.reloadRows(at: [indexPath], with: .automatic)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if gameData[indexPath.row].isExpan {
+            return 500
+        }
+        return UITableView.automaticDimension
+    }
 }

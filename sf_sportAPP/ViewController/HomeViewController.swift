@@ -30,9 +30,37 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var gameLineBtn: UIButton!
     @IBOutlet weak var gameLiveBtn: UIButton!
     @IBOutlet weak var gameCrossBtn: UIButton!
+    
+    @IBOutlet weak var gameContainerView: UIView!
+    
+    public var lineGameData: Array<gameModel> = Array()
+    
+    public let vc_mainGame = mainGameView.create()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let betH_0 = ["0.88","0.88","0.88","0.88"]
+        let betC_0 = ["0.88","0.88","0.88","0.88"]
+        
+        let conH_0 = ["0.88","0.88","0.88","0.88"]
+        let conC_0 = ["0.88","0.88","0.88","0.88"]
+        
+        let dataD_0 = gameDataDetailModel(homeBet: betH_0, awayBet: betC_0, homeCon: conH_0, awayCon: conC_0)
+//        let dataD_1 = gameDataDetailModel(homeBet: betH_0, awayBet: betC_0, homeCon: conH_0, awayCon: conC_0)
+        
+        let data_0 = gameDataModel(gameDate: "05/10\n07/10", homeTeam: "洋基", awayTeam: "洋芋", gameDetail: [dataD_0])
+        let data_1 = gameDataModel(gameDate: "05/18\n17/10", homeTeam: "XX", awayTeam: "AA", gameDetail: [dataD_0,dataD_0])
+        let data_2 = gameDataModel(gameDate: "01/18\n10/10", homeTeam: "BB", awayTeam: "CC", gameDetail: [dataD_0,dataD_0,dataD_0])
+        
+        lineGameData.append(gameModel(leagueName: "MLB 國際職棒-國聯", isExpan: false, gameData: [data_0,data_1,data_2]))
+        lineGameData.append(gameModel(leagueName: "MLB 國際職棒-國聯1", isExpan: false, gameData: [data_0,data_1,data_2]))
+        lineGameData.append(gameModel(leagueName: "MLB 國際職棒-國聯2", isExpan: false, gameData: [data_0,data_1,data_2]))
+        lineGameData.append(gameModel(leagueName: "MLB 國際職棒-國聯3", isExpan: false, gameData: [data_0,data_1,data_2]))
+        vc_mainGame.gameData = lineGameData
+        
         InitView()
+        
     }
     
     public func InitView(){
@@ -81,6 +109,9 @@ class HomeViewController: UIViewController {
         for i in 1 ... 10 {
             _GLobalService.LeagueList.append("聯盟測試\(i)號")
         }
+        
+        vc_mainGame.frame = CGRect(x: 0, y: 0, width: gameContainerView.frame.width, height: gameContainerView.frame.height)
+        gameContainerView.addSubview(vc_mainGame)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

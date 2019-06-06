@@ -73,7 +73,7 @@ extension sportView: UITableViewDataSource {
 
 extension sportView: UITableViewDelegate {
     // Set the spacing between sections
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 5
-    }
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 5
+//    }
 }
