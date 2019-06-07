@@ -25,7 +25,7 @@ class sportView: UIView {
     
     @objc func sport_onClick(_ sender: MyTapGuesture){
         _GLobalService.nowSport = sender.selectSport
-        customViewService.customViewWillRemove()
+        HomeViewController.removeCustomView()
     }
     
     class MyTapGuesture: UITapGestureRecognizer {

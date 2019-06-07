@@ -10,6 +10,7 @@ import UIKit
 
 class mainGameTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var leagueView: UIView!
     @IBOutlet weak var leagueName: UILabel!
     @IBOutlet weak var expanLabel: UILabel!
     @IBOutlet weak var teamTableView: UITableView!
@@ -79,10 +80,7 @@ extension mainGameTableViewCell: UITableViewDelegate {
             rowHeight = 103
         }
         
-        print("detail Cnt:",detailCnt)
         let CellRowHeight: CGFloat = CGFloat(detailCnt * rowHeight)
-        
-        print("cell Height :",CellRowHeight)
         
         return CellRowHeight
     }

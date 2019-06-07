@@ -106,9 +106,12 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h10-w2-2Oi">
                                                                 <rect key="frame" x="0.0" y="0.0" width="69" height="41"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 1+50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mks-8G-CF1">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 1+50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mks-8G-CF1" userLabel="1+50">
                                                                         <rect key="frame" x="2" y="13.5" width="32" height="14.5"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="32" id="Fcz-ud-yt9"/>
+                                                                        </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -375,6 +378,24 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="a_con_0" destination="GMe-ns-JVD" id="p1C-ft-IUL"/>
+                <outlet property="a_con_1" destination="jx7-ga-hzh" id="JIf-qo-8VL"/>
+                <outlet property="a_con_2" destination="HsV-Oa-OfJ" id="gb8-f7-Je3"/>
+                <outlet property="a_con_3" destination="GGR-D0-xlS" id="tt2-4J-L6H"/>
+                <outlet property="a_odds_0" destination="f7U-qh-QWJ" id="uFh-TE-ni8"/>
+                <outlet property="a_odds_1" destination="EZO-1r-v68" id="3N6-Ki-2Eo"/>
+                <outlet property="a_odds_2" destination="scY-yX-B1i" id="Cgi-DN-BEd"/>
+                <outlet property="a_odds_3" destination="6bv-3n-Yhb" id="vCb-3Y-ljh"/>
+                <outlet property="h_con_0" destination="b3F-VE-rcf" id="Hon-JM-fbg"/>
+                <outlet property="h_con_1" destination="y1y-Ko-nrB" id="LMI-jp-ylR"/>
+                <outlet property="h_con_2" destination="mks-8G-CF1" id="DcK-9G-oKI"/>
+                <outlet property="h_con_3" destination="X44-Kl-2c4" id="gld-he-3Zs"/>
+                <outlet property="h_odds_0" destination="yAB-hY-ULg" id="29r-CD-aMu"/>
+                <outlet property="h_odds_1" destination="syx-m8-OhK" id="kiW-JX-jOG"/>
+                <outlet property="h_odds_2" destination="58e-3c-QHQ" id="EPf-XT-zG5"/>
+                <outlet property="h_odds_3" destination="u0L-sI-7fE" id="NRx-Ek-0JH"/>
+            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="147.65625"/>
         </tableViewCell>
     </objects>

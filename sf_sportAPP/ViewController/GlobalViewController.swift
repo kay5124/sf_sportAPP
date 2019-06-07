@@ -69,8 +69,8 @@ class GlobalViewController: UIViewController {
         //公告
         else if _GLobalService.menuClickIdx == 7 {
             changeView = NoticeView.create()
-            let dialogView = changeView as! NoticeView
-            dialogView.noticeTypeBtn.addTarget(self, action: #selector(noticeTypeBtn_onClick), for: .touchUpInside)
+//            let dialogView = changeView as! NoticeView
+//            dialogView.noticeTypeBtn.addTarget(self, action: #selector(noticeTypeBtn_onClick), for: .touchUpInside)
         }
         
         changeView?.frame = CGRect(x: 0, y: 0, width: self.customView.frame.width, height: self.customView.frame.height)
@@ -165,33 +165,10 @@ class GlobalViewController: UIViewController {
         handicapView.HandicapTableView.reloadData()
     }
     
-    @objc func noticeTypeBtn_onClick(){
-        GlobalViewController.dialogType = 0
-        dialogShow()
-    }
-    
     @objc func dialogConfirmBtn_onClick(){
         let dialog = dialogViewController as! CustomDialogViewController
         
-        if GlobalViewController.dialogType == 0
-        {
-            noticeType = tempNoticeType
-            (nowView as! NoticeView).noticeTypeBtn.setTitle(noticeType, for: .normal)
-            
-            if noticeType == "所有" {
-                (nowView as! NoticeView).noticeData = _GLobalService.noticeData
-            }else {
-                var newArrayData: Array<noticeModel> = Array()
-                let newData = _GLobalService.noticeData.filter({$0.noticeType == noticeType})
-                for item in newData{
-                    newArrayData.append(item.self)
-                }
-                (nowView as! NoticeView).noticeData = newArrayData
-            }
-            
-            (nowView as! NoticeView).noticeTableView.reloadData()
-        }
-        else if GlobalViewController.dialogType == 1
+        if GlobalViewController.dialogType == 1
         {
             crossType = tempCrossType
             let cell = GlobalViewController.crossTypeCell as! CrossCalculatorTableViewCell
@@ -257,10 +234,7 @@ class GlobalViewController: UIViewController {
         dialogView.cancelBtn.addTarget(self, action: #selector(dialogCancelBtn_onClick), for: .touchUpInside)
         dialog.CusView.addSubview(dialogView)
         
-        if GlobalViewController.dialogType == 0 {
-            let noticeTypeIdx = _GLobalService.noticeTypeItems.firstIndex(where: { (item) -> Bool in item == noticeType })
-            dialogView.dataPicker.selectRow(noticeTypeIdx!, inComponent: 0, animated: true)
-        }else if GlobalViewController.dialogType == 1 {
+        if GlobalViewController.dialogType == 1 {
             let crossTypeIdx = _GLobalService.crossTypeItems.firstIndex(where: { (item) -> Bool in item == GlobalViewController.nowCellCrossType })
             dialogView.dataPicker.selectRow(crossTypeIdx!, inComponent: 0, animated: true)
         }
@@ -350,10 +324,7 @@ extension GlobalViewController: UIPickerViewDataSource{
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         let type = GlobalViewController.dialogType
-        if type == 0 {
-            return _GLobalService.noticeTypeItems.count
-        }
-        else if type == 1 {
+        if type == 1 {
             return _GLobalService.crossTypeItems.count
         }
         
@@ -366,11 +337,7 @@ extension GlobalViewController: UIPickerViewDelegate{
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let type = GlobalViewController.dialogType
-        if type == 0
-        {
-            return _GLobalService.noticeTypeItems[row]
-        }
-        else if type == 1
+        if type == 1
         {
             return _GLobalService.crossTypeItems[row]
         }
@@ -380,11 +347,7 @@ extension GlobalViewController: UIPickerViewDelegate{
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         let type = GlobalViewController.dialogType
-        if type == 0
-        {
-            return 60
-        }
-        else if type == 1
+        if type == 1
         {
             return 30
         }
@@ -394,12 +357,7 @@ extension GlobalViewController: UIPickerViewDelegate{
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let type = GlobalViewController.dialogType
-        
-        if type == 0
-        {
-            tempNoticeType = _GLobalService.noticeTypeItems[row]
-        }
-        else if type == 1
+        if type == 1
         {
             tempCrossType = _GLobalService.crossTypeItems[row]
         }

@@ -7,26 +7,27 @@
 //
 
 import UIKit
-import SwiftyJSON
+//import SwiftyJSON
 
 class NoticeView: UIView {
-    @IBOutlet weak var noticeTypeBtn: UIButton!
+    @IBOutlet weak var noticeTypeCollectionView: UICollectionView!
     @IBOutlet weak var userMoney: UILabel!
     @IBOutlet weak var noticeTableView: UITableView!
     
     public var noticeData: Array<noticeModel> = Array()
+    public var nowNoticeType: String = ""
+    public var isFirst: Bool = true
     
     //    private var noticeObj: noticeModel
     
     override func awakeFromNib() {
+        nowNoticeType = "所有"
         
         if _GLobalService.noticeData.count == 0
         {
-            _GLobalService.noticeData.append(noticeModel(noticeType: "公告", noticeDate: "2019/05/02 17:15:00", noticeContent: "測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試", isExpan: false))
-            _GLobalService.noticeData.append(noticeModel(noticeType: "足球", noticeDate: "2019/05/02 17:15:00", noticeContent: "測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試", isExpan: false))
-            _GLobalService.noticeData.append(noticeModel(noticeType: "其他", noticeDate: "2019/05/02 17:15:00", noticeContent: "測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試", isExpan: false))
-            _GLobalService.noticeData.append(noticeModel(noticeType: "籃球", noticeDate: "2019/05/02 17:15:00", noticeContent: "測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試", isExpan: false))
-            _GLobalService.noticeData.append(noticeModel(noticeType: "冰球", noticeDate: "2019/05/02 17:15:00", noticeContent: "測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試", isExpan: false))
+            for notice in _GLobalService.noticeTypeItems {
+                _GLobalService.noticeData.append(noticeModel(noticeType: notice, noticeDate: "2019/05/02 17:15:00", noticeContent: "測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試", isExpan: false))
+            }
         }
         
         noticeData = _GLobalService.noticeData
@@ -35,15 +36,18 @@ class NoticeView: UIView {
         noticeTableView.separatorStyle = .none
         
         userMoney.text = _GLobalService.userMoney
-        noticeTypeBtn.layer.cornerRadius = 10
-        noticeTypeBtn.layer.borderColor = UIColor.white.cgColor
-        noticeTypeBtn.layer.borderWidth = 1
         
         noticeTableView.dataSource = self
         noticeTableView.delegate = self
         let nib = UINib(nibName: "NoticeTableViewCell", bundle: nil)
         noticeTableView.register(nib, forCellReuseIdentifier: "noticeCell")
         
+        noticeTypeCollectionView.delegate = self
+        noticeTypeCollectionView.dataSource = self
+        let collNib = UINib(nibName: "noticeTypeCollectionViewCell", bundle: nil)
+        noticeTypeCollectionView.register(collNib, forCellWithReuseIdentifier: "noticeCollCell")
+        noticeTypeCollectionView.showsHorizontalScrollIndicator = false
+        noticeTypeCollectionView.showsVerticalScrollIndicator = false
     }
     
     public static func create() -> NoticeView {
@@ -55,7 +59,6 @@ class NoticeView: UIView {
 
 extension NoticeView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //        let noticeCnt = noticeData.filter({$1["noticeType"].string == noticeTypeBtn.title(for: .normal)!})
         return noticeData.count
     }
     
@@ -110,8 +113,54 @@ extension NoticeView: UITableViewDelegate {
         noticeTableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
-    //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    //        return 5
-    //    }
 }
 
+extension NoticeView: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return _GLobalService.noticeTypeItems.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noticeCollCell", for: indexPath) as! noticeTypeCollectionViewCell
+        
+        cell.noticeTypeLabel.text = _GLobalService.noticeTypeItems[indexPath.row]
+        cell.noticeTypeLabel.layer.cornerRadius = 10
+        cell.noticeTypeLabel.layer.borderColor = UIColor.white.cgColor
+        
+        if cell.noticeTypeLabel.text! == nowNoticeType {
+            cell.noticeTypeLabel.layer.borderWidth = 1
+        }else{
+            cell.noticeTypeLabel.layer.borderWidth = 0
+        }
+        
+        let myTap = TapClass(target: self, action: #selector(noticeTypeBtn_onClick(sender:)))
+        myTap.title = _GLobalService.noticeTypeItems[indexPath.row]
+        cell.noticeTypeLabel.addGestureRecognizer(myTap)
+        
+        return cell
+    }
+    
+    class TapClass: UITapGestureRecognizer {
+        var title: String = ""
+    }
+    
+    @objc func noticeTypeBtn_onClick(sender: TapClass){
+        let noticeType = sender.title
+        
+        if noticeType == "所有" {
+            noticeData = _GLobalService.noticeData
+        }else{
+            var newArrayData: Array<noticeModel> = Array()
+            let newData = _GLobalService.noticeData.filter({$0.noticeType == noticeType})
+            for item in newData{
+                newArrayData.append(item.self)
+            }
+            noticeData = newArrayData
+        }
+        
+        nowNoticeType = sender.title
+        noticeTableView.reloadData()
+        noticeTypeCollectionView.reloadData()
+    }
+    
+}

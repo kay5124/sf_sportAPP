@@ -31,6 +31,7 @@ class mainGameView: UIView {
         mainGameTableView.dataSource = self
         let mainGmaeNib = UINib(nibName: "mainGameTableViewCell", bundle: nil)
         mainGameTableView.register(mainGmaeNib, forCellReuseIdentifier: "mainGameCell")
+        mainGameTableView.allowsSelection = false
     }
     
     public static func create() -> mainGameView {
@@ -62,30 +63,54 @@ extension mainGameView: UITableViewDataSource {
             cell.scrollToTop()
         }
         
+        let myTap = cellTap(target: self, action: #selector(cell_onTap(sender:)))
+        myTap.idx = indexPath.row
+        myTap.idxPath = indexPath
+        cell.leagueView.addGestureRecognizer(myTap)
+        
         return cell
     }
     
+    class cellTap: UITapGestureRecognizer {
+        var idx : Int = -1
+        var idxPath: IndexPath?
+    }
     
-}
-
-extension mainGameView: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    @objc func cell_onTap(sender: cellTap){
+        let index = sender.idx
+        
         for item in mainGameTableView.visibleCells {
             let cell = item as! mainGameTableViewCell
             let idx = mainGameTableView.indexPath(for: cell)
-            if gameData[idx!.row].isExpan && indexPath.row != idx!.row {
+            if gameData[idx!.row].isExpan && sender.idxPath!.row != idx!.row {
                 gameData[idx!.row].isExpan = !gameData[idx!.row].isExpan
                 mainGameTableView.reloadRows(at: [idx!], with: .automatic)
             }
         }
         
-        gameData[indexPath.row].isExpan = !gameData[indexPath.row].isExpan
-        mainGameTableView.reloadRows(at: [indexPath], with: .automatic)
+        gameData[index].isExpan = !gameData[index].isExpan
+        mainGameTableView.reloadRows(at: [sender.idxPath!], with: .automatic)
     }
+}
+
+extension mainGameView: UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        for item in mainGameTableView.visibleCells {
+//            let cell = item as! mainGameTableViewCell
+//            let idx = mainGameTableView.indexPath(for: cell)
+//            if gameData[idx!.row].isExpan && indexPath.row != idx!.row {
+//                gameData[idx!.row].isExpan = !gameData[idx!.row].isExpan
+//                mainGameTableView.reloadRows(at: [idx!], with: .automatic)
+//            }
+//        }
+//
+//        gameData[indexPath.row].isExpan = !gameData[indexPath.row].isExpan
+//        mainGameTableView.reloadRows(at: [indexPath], with: .automatic)
+//    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if gameData[indexPath.row].isExpan {
-            return 500
+            return self.frame.height
         }
         return UITableView.automaticDimension
     }

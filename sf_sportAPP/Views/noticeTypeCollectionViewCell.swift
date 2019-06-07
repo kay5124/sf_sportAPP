@@ -9,7 +9,8 @@
 import UIKit
 
 class noticeTypeCollectionViewCell: UICollectionViewCell {
-
+    @IBOutlet weak var noticeTypeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

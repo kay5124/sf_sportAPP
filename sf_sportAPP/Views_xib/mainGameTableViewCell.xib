@@ -62,6 +62,7 @@
             <connections>
                 <outlet property="expanLabel" destination="GhA-E0-Ocy" id="1iL-Mz-EGL"/>
                 <outlet property="leagueName" destination="iWZ-Hh-yLF" id="yOf-2v-VWg"/>
+                <outlet property="leagueView" destination="RYC-3G-jVe" id="SZB-4M-C2E"/>
                 <outlet property="teamTableView" destination="waX-ES-FLg" id="QI9-3S-tbc"/>
             </connections>
             <point key="canvasLocation" x="158.69565217391306" y="152.00892857142856"/>

@@ -25,24 +25,27 @@
                             <color key="textColor" red="0.98548370600000001" green="0.88360917438504405" blue="0.32557928472423969" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZu-XI-9KN">
-                            <rect key="frame" x="10" y="7.5" width="120" height="35"/>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="SiP-IY-Wne">
+                            <rect key="frame" x="10" y="7.5" width="373.5" height="35"/>
+                            <color key="backgroundColor" red="0.52929061651229858" green="0.83298009634017944" blue="0.99994558095932007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="35" id="akm-vG-0rO"/>
-                                <constraint firstAttribute="width" constant="120" id="lmq-Zw-tk0"/>
+                                <constraint firstAttribute="height" constant="35" id="JVo-qC-FyI"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" title="所有">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                        </button>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="n7z-SF-ZwI">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
                     </subviews>
                     <color key="backgroundColor" red="0.52929061649999998" green="0.83298009630000003" blue="0.99994558099999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="ho6-tw-TiJ" firstAttribute="centerY" secondItem="YAV-p5-bqi" secondAttribute="centerY" id="1m6-uO-ZNU"/>
                         <constraint firstAttribute="trailing" secondItem="ho6-tw-TiJ" secondAttribute="trailing" constant="10" id="4RE-sZ-yOZ"/>
-                        <constraint firstItem="DZu-XI-9KN" firstAttribute="leading" secondItem="YAV-p5-bqi" secondAttribute="leading" constant="10" id="SUN-Mc-N2V"/>
-                        <constraint firstItem="DZu-XI-9KN" firstAttribute="centerY" secondItem="YAV-p5-bqi" secondAttribute="centerY" id="YUN-sx-t75"/>
+                        <constraint firstItem="ho6-tw-TiJ" firstAttribute="leading" secondItem="SiP-IY-Wne" secondAttribute="trailing" constant="10" id="ghz-KA-94U"/>
+                        <constraint firstItem="SiP-IY-Wne" firstAttribute="centerY" secondItem="YAV-p5-bqi" secondAttribute="centerY" id="wZj-A0-bX6"/>
+                        <constraint firstItem="SiP-IY-Wne" firstAttribute="leading" secondItem="YAV-p5-bqi" secondAttribute="leading" constant="10" id="yPo-sv-ArV"/>
                         <constraint firstAttribute="height" constant="50" id="ynf-46-ofQ"/>
                     </constraints>
                 </view>
@@ -64,7 +67,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <connections>
                 <outlet property="noticeTableView" destination="Ecs-Pm-THj" id="NHF-Ry-cy8"/>
-                <outlet property="noticeTypeBtn" destination="DZu-XI-9KN" id="RsW-kp-zVQ"/>
+                <outlet property="noticeTypeCollectionView" destination="SiP-IY-Wne" id="Jmq-Vg-NqM"/>
                 <outlet property="userMoney" destination="ho6-tw-TiJ" id="b3z-de-dtW"/>
             </connections>
             <point key="canvasLocation" x="50.724637681159422" y="35.491071428571423"/>

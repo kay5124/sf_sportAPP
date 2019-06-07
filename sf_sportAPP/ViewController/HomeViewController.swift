@@ -34,17 +34,23 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var gameContainerView: UIView!
     
     public var lineGameData: Array<gameModel> = Array()
+    public var liveGameData: Array<gameModel> = Array()
+    public var crossGameData: Array<gameModel> = Array()
+    
+    public var totalGameData : Dictionary<String,Dictionary<String,Array<gameModel>>>?
     
     public let vc_mainGame = mainGameView.create()
     
+    private var gameType: String = "line"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        totalGameData = Dictionary<String,Dictionary<String,Array<gameModel>>>()
         let betH_0 = ["0.88","0.88","0.88","0.88"]
-        let betC_0 = ["0.88","0.88","0.88","0.88"]
+        let betC_0 = ["0.12","0.12","0.12","0.12"]
         
-        let conH_0 = ["0.88","0.88","0.88","0.88"]
-        let conC_0 = ["0.88","0.88","0.88","0.88"]
+        let conH_0 = ["1+10","1+10","1+10","1+10"]
+        let conC_0 = ["2+10","2+10","2+10","2+10"]
         
         let dataD_0 = gameDataDetailModel(homeBet: betH_0, awayBet: betC_0, homeCon: conH_0, awayCon: conC_0)
 //        let dataD_1 = gameDataDetailModel(homeBet: betH_0, awayBet: betC_0, homeCon: conH_0, awayCon: conC_0)
@@ -55,10 +61,29 @@ class HomeViewController: UIViewController {
         
         lineGameData.append(gameModel(leagueName: "MLB 國際職棒-國聯", isExpan: false, gameData: [data_0,data_1,data_2]))
         lineGameData.append(gameModel(leagueName: "MLB 國際職棒-國聯1", isExpan: false, gameData: [data_0,data_1,data_2]))
-        lineGameData.append(gameModel(leagueName: "MLB 國際職棒-國聯2", isExpan: false, gameData: [data_0,data_1,data_2]))
-        lineGameData.append(gameModel(leagueName: "MLB 國際職棒-國聯3", isExpan: false, gameData: [data_0,data_1,data_2]))
-        vc_mainGame.gameData = lineGameData
+        liveGameData.append(gameModel(leagueName: "MLB 國際職棒-國聯2", isExpan: false, gameData: [data_0,data_1,data_2]))
+        liveGameData.append(gameModel(leagueName: "MLB 國際職棒-國聯3", isExpan: false, gameData: [data_0,data_1,data_2]))
+        crossGameData.append(gameModel(leagueName: "MLB 國際職棒-國聯4", isExpan: false, gameData: [data_0,data_1,data_2]))
         
+        for sportType in _GLobalService.sportItems{
+            let sport = sportType.key.components(separatedBy: "_")[1]
+            
+            let emptyData:[String : Array<gameModel>]  = [
+                "line":Array(),
+                "live":Array(),
+                "cross":Array()
+            ]
+            
+            totalGameData![sport] = emptyData
+        }
+        
+        
+        totalGameData!["棒球"]!["line"] = lineGameData
+        totalGameData!["棒球"]!["live"] = liveGameData
+        totalGameData!["棒球"]!["cross"] = crossGameData
+//
+        vc_mainGame.gameData = totalGameData!["足球"]!["line"]!
+        print(vc_mainGame.gameData)
         InitView()
         
     }
@@ -118,16 +143,16 @@ class HomeViewController: UIViewController {
         let touch = touches.first!
         
         if touch.view == maskView {
-            customViewService.customViewWillRemove()
+            HomeViewController.removeCustomView()
         }
     }
     
     @objc func refreshStack_onClick(){
-        customViewService.customViewWillRemove()
+        HomeViewController.removeCustomView()
     }
     
     @objc func betRecordStackView_onClick(){
-        customViewService.customViewWillRemove()
+        HomeViewController.removeCustomView()
     }
     
     @objc func sportStackView_onClick(){
@@ -140,6 +165,24 @@ class HomeViewController: UIViewController {
         nowCusView = "sport"
         customView.isHidden = false
         maskView.isHidden = false
+    }
+    
+    public static func removeCustomView(){
+        let vc_home = _GLobalService.nowViewController as! HomeViewController
+        
+        if vc_home.nowCusView == "sport" {
+            let Item = _GLobalService.sportItems.filter{$0.key.contains(_GLobalService.nowSport)}
+            let sport = Item.first?.key.components(separatedBy: "_")[1] ?? "足球"
+            
+            vc_home.sportImgView.image = UIImage(named: Item.first?.value ?? "ic_sc")
+            vc_home.sportNameLabel.text = sport
+            
+            vc_home.vc_mainGame.gameData = vc_home.totalGameData![_GLobalService.nowSport]![vc_home.gameType]!
+            vc_home.vc_mainGame.mainGameTableView.reloadData()
+        }
+        
+        vc_home.customView.isHidden = true
+        vc_home.maskView.isHidden = true
     }
     
     @objc func LeagueStackView_onClick(){
@@ -185,23 +228,25 @@ class HomeViewController: UIViewController {
         let btn = sender
         btn.backgroundColor = .white
         btn.setTitleColor(.black, for: .normal)
-    }
-    
-}
-
-class customViewService {
-    public static func customViewWillRemove(){
         
-        let vc_home = _GLobalService.nowViewController as! HomeViewController
-        
-        if vc_home.nowCusView == "sport" {
-            let Item = _GLobalService.sportItems.filter{$0.key.contains(_GLobalService.nowSport)}
-            
-            vc_home.sportImgView.image = UIImage(named: Item.first?.value ?? "ic_sc")
-            vc_home.sportNameLabel.text = Item.first?.key.components(separatedBy: "_")[1] ?? "足球"
+        switch sender.title(for: .normal) {
+        case "單式":
+            gameType = "line"
+            break
+        case "滾球":
+            gameType = "live"
+            break
+        case "過關":
+            gameType = "cross"
+            break
+        default:
+            break
         }
-    
-        vc_home.customView.isHidden = true
-        vc_home.maskView.isHidden = true
+        
+        let sport = _GLobalService.nowSport.isEmpty ? "足球" : _GLobalService.nowSport
+        
+        vc_mainGame.gameData = totalGameData![sport]![gameType]!
+        vc_mainGame.mainGameTableView.reloadData()
     }
+    
 }
