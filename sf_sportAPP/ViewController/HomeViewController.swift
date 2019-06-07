@@ -177,7 +177,7 @@ class HomeViewController: UIViewController {
             vc_home.sportImgView.image = UIImage(named: Item.first?.value ?? "ic_sc")
             vc_home.sportNameLabel.text = sport
             
-            vc_home.vc_mainGame.gameData = vc_home.totalGameData![_GLobalService.nowSport]![vc_home.gameType]!
+            vc_home.vc_mainGame.gameData = vc_home.totalGameData?[_GLobalService.nowSport]?[vc_home.gameType]! ?? Array()
             vc_home.vc_mainGame.mainGameTableView.reloadData()
         }
         
