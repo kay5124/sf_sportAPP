@@ -56,6 +56,7 @@ extension mainGameView: UITableViewDataSource {
         }else{
             cell.expanLabel.text = "▲"
             cell.teamArray = gameData[indexPath.row].gameData
+            cell.leaId = gameData[indexPath.row].leaId
             cell.teamTableView.reloadData()
             
             mainGameTableView.scrollToRow(at: indexPath, at: .top, animated: true)

@@ -7,47 +7,58 @@
 //
 
 import UIKit
-//import SwiftyJSON
+import Alamofire
+import SwiftyJSON
 
 class NoticeView: UIView {
     @IBOutlet weak var noticeTypeCollectionView: UICollectionView!
     @IBOutlet weak var userMoney: UILabel!
     @IBOutlet weak var noticeTableView: UITableView!
     
+    public var noticeType: Int = 0
     public var noticeData: Array<noticeModel> = Array()
     public var nowNoticeType: String = ""
-    public var isFirst: Bool = true
-    
-    //    private var noticeObj: noticeModel
     
     override func awakeFromNib() {
+        _GLobalService.noticeData.removeAll()
         nowNoticeType = "所有"
+        self.userMoney.text = _GLobalService.userMoney
         
-        if _GLobalService.noticeData.count == 0
-        {
-            for notice in _GLobalService.noticeTypeItems {
-                _GLobalService.noticeData.append(noticeModel(noticeType: notice, noticeDate: "2019/05/02 17:15:00", noticeContent: "測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試", isExpan: false))
+        self.noticeTableView.tableFooterView = UIView()
+        self.noticeTableView.separatorStyle = .none
+        
+        self.noticeTypeCollectionView.delegate = self
+        self.noticeTypeCollectionView.dataSource = self
+        let collNib = UINib(nibName: "noticeTypeCollectionViewCell", bundle: nil)
+        self.noticeTypeCollectionView.register(collNib, forCellWithReuseIdentifier: "noticeCollCell")
+        self.noticeTypeCollectionView.showsHorizontalScrollIndicator = false
+        self.noticeTypeCollectionView.showsVerticalScrollIndicator = false
+        
+        _GLobalService.loadingView.show(on: self)
+        let parameters = ["_token" : _GLobalService.apiToken, "noticeType" : String(noticeType)]
+        
+        Alamofire.request(_GLobalService.apiAddress + "getNotice", method: .post, parameters: parameters).validate().responseJSON{ (response) in
+            switch response.result {
+            case .success(_):
+                _GLobalService.loadingView.hide()
+                let json = try? JSON(data: response.data!)
+                for item in json!["noticeData"].array! {
+                    _GLobalService.noticeData.append(noticeModel(noticeType: item["title"].string!, noticeDate: item["start_time"].string!, noticeContent: item["msg"].string!, isExpan: false))
+                }
+                
+                self.noticeData = _GLobalService.noticeData
+                
+                self.noticeTableView.dataSource = self
+                self.noticeTableView.delegate = self
+                let nib = UINib(nibName: "NoticeTableViewCell", bundle: nil)
+                self.noticeTableView.register(nib, forCellReuseIdentifier: "noticeCell")
+                
+                self.noticeTableView.reloadData()
+            case .failure(_):
+                _GLobalService.loadingView.hide()
+                _GLobalService.nowViewController?.showAlertDialog("錯誤", "請檢查網路連線")
             }
         }
-        
-        noticeData = _GLobalService.noticeData
-        
-        noticeTableView.tableFooterView = UIView()
-        noticeTableView.separatorStyle = .none
-        
-        userMoney.text = _GLobalService.userMoney
-        
-        noticeTableView.dataSource = self
-        noticeTableView.delegate = self
-        let nib = UINib(nibName: "NoticeTableViewCell", bundle: nil)
-        noticeTableView.register(nib, forCellReuseIdentifier: "noticeCell")
-        
-        noticeTypeCollectionView.delegate = self
-        noticeTypeCollectionView.dataSource = self
-        let collNib = UINib(nibName: "noticeTypeCollectionViewCell", bundle: nil)
-        noticeTypeCollectionView.register(collNib, forCellWithReuseIdentifier: "noticeCollCell")
-        noticeTypeCollectionView.showsHorizontalScrollIndicator = false
-        noticeTypeCollectionView.showsVerticalScrollIndicator = false
     }
     
     public static func create() -> NoticeView {

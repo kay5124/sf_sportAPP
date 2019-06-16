@@ -9,6 +9,7 @@
 import UIKit
 
 class LeagueTableViewCell: UITableViewCell {
+    @IBOutlet weak var leagueId: UILabel!
     @IBOutlet weak var leagueCheckBoxImgView: UIImageView!
     @IBOutlet weak var leagueNameLabel: UILabel!
     

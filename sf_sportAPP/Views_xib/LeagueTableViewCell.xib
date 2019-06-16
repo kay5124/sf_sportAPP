@@ -32,9 +32,17 @@
                             <constraint firstAttribute="width" constant="16" id="H2j-ib-1Q4"/>
                         </constraints>
                     </imageView>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="league id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKU-hb-ExD">
+                        <rect key="frame" x="250" y="43.5" width="70" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="DKU-hb-ExD" secondAttribute="bottom" id="Jxp-na-n2N"/>
+                    <constraint firstAttribute="trailing" secondItem="DKU-hb-ExD" secondAttribute="trailing" id="MTe-np-pxh"/>
                     <constraint firstItem="46S-eN-qbL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Mxg-Ed-XZL"/>
                     <constraint firstItem="vbh-6K-2bM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XiL-Xa-gZU"/>
                     <constraint firstItem="vbh-6K-2bM" firstAttribute="leading" secondItem="46S-eN-qbL" secondAttribute="trailing" constant="10" id="cHs-0B-jKd"/>
@@ -45,6 +53,7 @@
             <viewLayoutGuide key="safeArea" id="3Kr-L7-OX4"/>
             <connections>
                 <outlet property="leagueCheckBoxImgView" destination="46S-eN-qbL" id="xTW-ae-fh4"/>
+                <outlet property="leagueId" destination="DKU-hb-ExD" id="dNP-MH-ZLi"/>
                 <outlet property="leagueNameLabel" destination="vbh-6K-2bM" id="8ka-hL-fjm"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="119.53125"/>

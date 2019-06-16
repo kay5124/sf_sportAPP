@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class LeagueView: UIView {
     @IBOutlet weak var confirmBtn: UIButton!
@@ -14,20 +16,25 @@ class LeagueView: UIView {
     @IBOutlet weak var allChkImageView: UIImageView!
     @IBOutlet weak var leagueTableView: UITableView!
     
+    public var leaguesData: Array<leagueModel> = Array()
+    
     override func awakeFromNib() {
-        leagueTableView.delegate = self
-        leagueTableView.dataSource = self
+        
+        leaguesData = _GLobalService.leaguesData
+        
+        self.leagueTableView.delegate = self
+        self.leagueTableView.dataSource = self
         
         let nib = UINib(nibName: "LeagueTableViewCell", bundle: nil)
-        leagueTableView.register(nib, forCellReuseIdentifier: "leagueCell")
-     
-        confirmBtn.layer.cornerRadius = 10
-        cancelBtn.layer.cornerRadius = 10
+        self.leagueTableView.register(nib, forCellReuseIdentifier: "leagueCell")
+        
+        self.confirmBtn.layer.cornerRadius = 10
+        self.cancelBtn.layer.cornerRadius = 10
         
         //去除多餘的行數
-        leagueTableView.tableFooterView = UIView()
+        self.leagueTableView.tableFooterView = UIView()
+        leagueTableView.allowsSelection = false
         
-        _GLobalService.tempLeagueSelectList = _GLobalService.LeagueSelectList
     }
     
     public static func create() -> LeagueView {
@@ -39,44 +46,51 @@ class LeagueView: UIView {
 
 extension LeagueView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return _GLobalService.LeagueList.count
+        return leaguesData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "leagueCell", for: indexPath) as! LeagueTableViewCell
         
-        let leaName: String = _GLobalService.LeagueList[indexPath.row]
-        
-        let filter = _GLobalService.LeagueSelectList.filter({$0.contains(leaName)})
-        
-        if filter.count > 0 {
+        if leaguesData[indexPath.row].isChecked {
             cell.leagueCheckBoxImgView.image = UIImage(named: "ic_chk_true")
         }else{
             cell.leagueCheckBoxImgView.image = UIImage(named: "ic_chk_false")
         }
         
-        cell.leagueNameLabel.text = leaName
+        cell.leagueNameLabel.text = leaguesData[indexPath.row].leagueName
+        cell.leagueId.text = leaguesData[indexPath.row].leaguesId
+        
+        let tap = leagueTapClass(target: self, action: #selector(leagueTap))
+        tap.Cell = cell
+        tap.idxPath = indexPath
+        cell.addGestureRecognizer(tap)
         
         return cell
     }
     
+    class leagueTapClass: UITapGestureRecognizer {
+        var Cell: UITableViewCell?
+        var idxPath: IndexPath?
+    }
+    
+    @objc func leagueTap(sender: leagueTapClass){
+//        let cell = leagueTableView.indexPath(for: sender.Cell!) as! LeagueTableViewCell
+        leaguesData[sender.idxPath!.row].isChecked = !leaguesData[sender.idxPath!.row].isChecked
+        leagueTableView.reloadRows(at: [sender.idxPath!], with: .automatic)
+    }
 }
 
 extension LeagueView: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! LeagueTableViewCell
         
-        let leaName: String = cell.leagueNameLabel.text ?? ""
-        
-        let filter = _GLobalService.LeagueSelectList.filter({$0.contains(leaName)})
-        
-        if filter.count > 0 {
-            _GLobalService.tempLeagueSelectList.removeAll{$0 == leaName}
-            cell.leagueCheckBoxImgView.image = UIImage(named: "ic_chk_false")
-        }else{
-            _GLobalService.tempLeagueSelectList.append(leaName)
-//            _GLobalService.LeagueSelectList.append(leaName)
+        if leaguesData[indexPath.row].isChecked {
             cell.leagueCheckBoxImgView.image = UIImage(named: "ic_chk_true")
+        }else{
+            cell.leagueCheckBoxImgView.image = UIImage(named: "ic_chk_false")
         }
+    
+        leaguesData[indexPath.row].isChecked = !leaguesData[indexPath.row].isChecked
     }
 }

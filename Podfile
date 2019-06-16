@@ -9,5 +9,6 @@ target 'sf_sportAPP' do
   # Pods for sf_sportAPP
   pod 'SideMenu'
   pod 'SwiftyJSON', '~> 4.0'
-
+  pod 'Alamofire', '~> 4.8.2'
+  pod 'RSLoadingView'
 end

@@ -18,6 +18,12 @@ class m_Game_TeamTableViewCell: UITableViewCell {
     
     public var betData: Array<gameDataDetailModel> = Array()
     
+    public var gameid: String?
+    public var playCode: String?
+    public var leaId: String?
+    public var h_teamId: String?
+    public var a_teamId: String?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -46,73 +52,76 @@ extension m_Game_TeamTableViewCell: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "betCell", for: indexPath) as! m_Game_BetTableViewCell
         
-        var home_conCell: Array<UILabel> = Array()
-        var home_oddsCell: Array<UILabel> = Array()
+        var h_bet_view: Array<UIView> = Array()
+        var a_bet_view: Array<UIView> = Array()
         
-        var away_conCell: Array<UILabel> = Array()
-        var away_oddsCell: Array<UILabel> = Array()
+        h_bet_view.append(cell.h_bet_0)
+        h_bet_view.append(cell.h_bet_1)
+        h_bet_view.append(cell.h_bet_2)
+        h_bet_view.append(cell.h_bet_3)
+
+        a_bet_view.append(cell.a_bet_0)
+        a_bet_view.append(cell.a_bet_1)
+        a_bet_view.append(cell.a_bet_2)
+        a_bet_view.append(cell.a_bet_3)
         
-        home_conCell.append(cell.h_con_0)
-        home_conCell.append(cell.h_con_1)
-        home_conCell.append(cell.h_con_2)
-        home_conCell.append(cell.h_con_3)
-        
-        home_oddsCell.append(cell.h_odds_0)
-        home_oddsCell.append(cell.h_odds_1)
-        home_oddsCell.append(cell.h_odds_2)
-        home_oddsCell.append(cell.h_odds_3)
-        
-        away_conCell.append(cell.a_con_0)
-        away_conCell.append(cell.a_con_1)
-        away_conCell.append(cell.a_con_2)
-        away_conCell.append(cell.a_con_3)
-        
-        away_oddsCell.append(cell.a_odds_0)
-        away_oddsCell.append(cell.a_odds_1)
-        away_oddsCell.append(cell.a_odds_2)
-        away_oddsCell.append(cell.a_odds_3)
-//        print("home bet",betData[indexPath.row].homeBet)
-//        print("away bet",betData[indexPath.row].awayBet)
-//        print("home con",betData[indexPath.row].homeCon)
-//        print("away con",betData[indexPath.row].awayBet)
-//
-        var idx = 0
-        for con in betData[indexPath.row].homeCon {
-            home_conCell[idx].text = con.isEmpty ? "" : con
+        var idx: Int = 0
+        for views in h_bet_view {
+            let h_con = views.subviews[0] as! UILabel
+            let h_odds = views.subviews[1] as! UILabel
+            
+            h_con.text = betData[indexPath.row].homeCon[idx]
+            h_odds.text = betData[indexPath.row].homeBet[idx]
+            
+            let tap = oddsTap(target: self, action: #selector(odds_onClick(sender:)))
+            tap.gameid = gameid ?? ""
+            tap.leaId = leaId ?? ""
+            tap.playCode = playCode ?? ""
+            tap.sport = _GLobalService.nowSport
+            tap.teamId = h_teamId ?? ""
+            tap.type = "H"
+            tap.con = betData[indexPath.row].homeCon[idx]
+            tap.odds = betData[indexPath.row].homeBet[idx]
+            tap.h_team = teamH.text!
+            tap.a_team = teamA.text!
+            views.addGestureRecognizer(tap)
+            
             idx += 1
         }
         
         idx = 0
         
-        for odds in betData[indexPath.row].homeBet {
-            home_oddsCell[idx].text = odds.isEmpty ? "" : odds
+        for views in a_bet_view {
+            let a_con = views.subviews[0] as! UILabel
+            let a_odds = views.subviews[1] as! UILabel
+            
+            a_con.text = betData[indexPath.row].awayCon[idx]
+            a_odds.text = betData[indexPath.row].awayBet[idx]
+            
+            let tap = oddsTap(target: self, action: #selector(odds_onClick(sender:)))
+            tap.gameid = gameid ?? ""
+            tap.leaId = leaId ?? ""
+            tap.playCode = playCode ?? ""
+            tap.sport = _GLobalService.nowSport
+            tap.teamId = h_teamId ?? ""
+            tap.type = "C"
+            tap.con = betData[indexPath.row].awayCon[idx]
+            tap.odds = betData[indexPath.row].awayBet[idx]
+            tap.h_team = teamH.text!
+            tap.a_team = teamA.text!
+            views.addGestureRecognizer(tap)
+            
             idx += 1
         }
-        
-        idx = 0
-        
-        for con in betData[indexPath.row].awayCon {
-            away_conCell[idx].text = con.isEmpty ? "" : con
-            idx += 1
-        }
-        
-        idx = 0
-        
-        for odds in betData[indexPath.row].awayBet {
-            away_oddsCell[idx].text = odds.isEmpty ? "" : odds
-            idx += 1
-        }
-        
         
         return cell
     }
     
-    
+    @objc func odds_onClick(sender: oddsTap){
+        (_GLobalService.nowViewController as! HomeViewController).showBetDeatilView(sender: sender)
+    }
 }
 extension m_Game_TeamTableViewCell: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 83

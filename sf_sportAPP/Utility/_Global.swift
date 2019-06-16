@@ -2,11 +2,19 @@ import UIKit
 import Foundation
 import SideMenu
 import SwiftyJSON
+import RSLoadingView
 
 class _GLobalService {
+    public static let loadingView = RSLoadingView(effectType: RSLoadingView.Effect.twins)
+    
+    public static let apiAddress = "http://rayhostweb.ddns.net:83/sport_app/"
+
+    public static var apiToken = ""
+    
     public static let thisPhoneModel = UIDevice.modelName
     
     public static var noticeData: Array<noticeModel> = Array()
+    public static var leaguesData: Array<leagueModel> = Array()
     
     public static let sideMenuItems = ["0_遊戲主頁":"ic_home",
                                        "1_投注記錄":"ic_record",
@@ -28,12 +36,15 @@ class _GLobalService {
     public static let noticeTypeItems = [
         "所有",
         "公告",
+        "系統",
+        "維護",
         "其他",
         "棒球",
         "足球",
         "籃球",
         "冰球",
-        "美足"
+        "美足",
+        "美籃"
     ]
     
     public static let crossTypeItems = [ "全贏", "全輸", "平", "+", "-" ]

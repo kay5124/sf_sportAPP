@@ -15,6 +15,7 @@ class mainGameTableViewCell: UITableViewCell {
     @IBOutlet weak var expanLabel: UILabel!
     @IBOutlet weak var teamTableView: UITableView!
     
+    public var leaId: String?
     public var teamArray: Array<gameDataModel> = Array()
     
     override func awakeFromNib() {

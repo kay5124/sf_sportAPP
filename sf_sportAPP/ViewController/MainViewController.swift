@@ -8,6 +8,7 @@
 import UIKit
 import Foundation
 import SideMenu
+import Alamofire
 
 class MainViewController: UIViewController {
     
