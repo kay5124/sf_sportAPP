@@ -45,6 +45,8 @@ class HomeViewController: UIViewController {
     
     private var gameType: String = "line"
     
+    private var nowShowController: UIViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,6 +54,7 @@ class HomeViewController: UIViewController {
     }
     
     public func InitView(){
+        nowShowController = self
         /* 初始化每個球種比賽資料 */
         totalGameData = Dictionary<String,Dictionary<String,Array<gameModel>>>()
         for sportType in _GLobalService.sportItems{
@@ -297,6 +300,8 @@ class HomeViewController: UIViewController {
     public func showBetDeatilView(sender: oddsTap){
         let vc_dialog = storyboard?.instantiateViewController(withIdentifier: "vc_Dialog") as! CustomDialogViewController
         self.present(vc_dialog, animated: true, completion: nil)
+        nowShowController = vc_dialog
+        
         vc_dialog.CusTomViewTop.constant = 10
         vc_dialog.CusTomViewBottom.constant = 10
         
@@ -308,8 +313,11 @@ class HomeViewController: UIViewController {
         confirmBetView.odds.text = sender.odds!
         confirmBetView.homeTeam.text = sender.h_team!
         confirmBetView.awayTeam.text = sender.a_team!
-        
     }
     
+    public func closeConfirmBetView(){
+        (nowShowController as! CustomDialogViewController).dismiss(animated: true, completion: nil)
+        nowShowController = self
+    }
     
 }

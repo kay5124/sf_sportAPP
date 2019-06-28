@@ -240,12 +240,20 @@ class CrossCalculatorView: UIView {
                     isNotCross = true
                 }
                 else if cell.crossTypeLabel.text! == "+" {
-                    let oddsPersent = Float(cell.crossPersentText.text!)! / 100
-                    calc *= Float( 1 + Float( odds! * oddsPersent ) )
+                    if cell.crossPersentText.text!.isEmpty {
+                        calc *= Float( 1 + Float( odds! * 0 ) )
+                    }else{
+                        let oddsPersent = Float(cell.crossPersentText.text!)! / 100
+                        calc *= Float( 1 + Float( odds! * oddsPersent ) )
+                    }
                 }
                 else if cell.crossTypeLabel.text! == "-" {
-                    let oddsPersent = Float(cell.crossPersentText.text!)! / 100
-                    calc *= Float( 1 - oddsPersent )
+                    if cell.crossPersentText.text!.isEmpty {
+                        calc *= Float( 1 )
+                    }else{
+                        let oddsPersent = Float(cell.crossPersentText.text!)! / 100
+                        calc *= Float( 1 - oddsPersent )
+                    }
                 }
             }
         }

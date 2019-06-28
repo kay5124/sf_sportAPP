@@ -464,6 +464,7 @@
                 <outlet property="betMoney" destination="RgO-YS-PT5" id="j2X-4W-lNa"/>
                 <outlet property="betTitle" destination="022-Lt-Kvk" id="SlO-PX-wUK"/>
                 <outlet property="betType" destination="3DD-NU-urs" id="Yt1-0N-nok"/>
+                <outlet property="cancelBtn" destination="hQw-li-JbC" id="7UO-1J-5s4"/>
                 <outlet property="con" destination="S61-zG-TCm" id="BJy-kF-BSm"/>
                 <outlet property="confirmBtn" destination="vfR-R2-ZOp" id="anb-M3-8bZ"/>
                 <outlet property="homeTeam" destination="73f-G0-JGw" id="cub-9p-6V9"/>

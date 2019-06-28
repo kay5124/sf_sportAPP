@@ -120,6 +120,7 @@ extension m_Game_TeamTableViewCell: UITableViewDataSource{
     @objc func odds_onClick(sender: oddsTap){
         (_GLobalService.nowViewController as! HomeViewController).showBetDeatilView(sender: sender)
     }
+    
 }
 extension m_Game_TeamTableViewCell: UITableViewDelegate {
     

@@ -7,6 +7,7 @@ import RSLoadingView
 class _GLobalService {
     public static let loadingView = RSLoadingView(effectType: RSLoadingView.Effect.twins)
     
+//    public static let apiAddress = "http://192.168.213.113:83/sport_app/"
     public static let apiAddress = "http://rayhostweb.ddns.net:83/sport_app/"
 
     public static var apiToken = ""

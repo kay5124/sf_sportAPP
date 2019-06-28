@@ -67,34 +67,38 @@ class MainViewController: UIViewController {
             switchViewController(myView, _GLobalService.nowViewController, vc_home)
             break
         case 1:
+            showAlertDialog("提示", "此功能尚未開放")
             break
         case 2:
             let vc_global = storyboard?.instantiateViewController(withIdentifier: "vc_global") as! GlobalViewController
             self.navigationController?.pushViewController(vc_global, animated: true)
             break
         case 3:
-            
             let vc_global = storyboard?.instantiateViewController(withIdentifier: "vc_global") as! GlobalViewController
             self.navigationController?.pushViewController(vc_global, animated: true)
-            
             break
         case 4:
+            showAlertDialog("提示", "此功能尚未開放")
             break
         case 5:
+            showAlertDialog("提示", "此功能尚未開放")
             break
         case 6:
+            showAlertDialog("提示", "此功能尚未開放")
             break
         case 7:
             let vc_global = storyboard?.instantiateViewController(withIdentifier: "vc_global") as! GlobalViewController
             self.navigationController?.pushViewController(vc_global, animated: true)
             break
         case 8:
+            showAlertDialog("提示", "此功能尚未開放")
             break
         case 9:
             let vc_login = storyboard?.instantiateViewController(withIdentifier: "vc_login") as! LoginViewController
             switchViewController(myView, _GLobalService.nowViewController, vc_login)
             break
         default:
+            showAlertDialog("提示", "此功能尚未開放")
             break
         }
     }

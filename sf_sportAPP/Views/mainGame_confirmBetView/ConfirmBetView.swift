@@ -25,6 +25,7 @@ class ConfirmBetView: UIView {
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var titleView: UIView!
     
+    @IBOutlet weak var cancelBtn: UILabel!
     override func awakeFromNib() {
         self.layer.cornerRadius = 10
         betDetailView.layer.cornerRadius = 10
@@ -42,6 +43,13 @@ class ConfirmBetView: UIView {
         moneyKeyboardView.layer.borderColor = UIColor.blue.cgColor
         
         confirmBtn.layer.cornerRadius = 10
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(cancelBtn_onClick))
+        cancelBtn.addGestureRecognizer(tap)
+    }
+    
+    @objc func cancelBtn_onClick(){
+        (_GLobalService.nowViewController as! HomeViewController).closeConfirmBetView()
     }
     
     public static func create() -> ConfirmBetView{

@@ -18,8 +18,8 @@ class mainGameView: UIView {
         InitViews()
     }
     
-    private func InitViews(){
-        
+    private func InitViews()
+    {
 //        mainGameTableView.allowsSelection = false
         mainGameTableView.delaysContentTouches = false
         mainGameTableView.separatorInset = .zero

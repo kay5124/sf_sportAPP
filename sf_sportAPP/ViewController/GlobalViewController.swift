@@ -225,6 +225,8 @@ class GlobalViewController: UIViewController {
     public func dialogShow(){
         let dialog = dialogViewController as! CustomDialogViewController
         present(dialog, animated: true, completion: nil)
+        dialog.CusTomViewBottom.constant = 200
+        dialog.CusTomViewTop.constant = 200
         
         let dialogView = CusDataPickerView.create()
         dialogView.frame = CGRect(x: 0, y: 0, width: dialog.CusView.frame.width, height: dialog.CusView.frame.height)
